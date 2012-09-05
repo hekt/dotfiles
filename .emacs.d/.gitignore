@@ -1,0 +1,8 @@
+*#
+.#.*
+*~
+*.elc
+.DS_Store
+.emacs.desktop
+tramp
+auto-save-list/
