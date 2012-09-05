@@ -1,3 +1,4 @@
+# hoge
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
