@@ -1,0 +1,30 @@
+# .osx: OS X configurations
+
+#
+# Finder
+#
+
+# show the ~/Library
+chflags nohidden ~/Library
+
+# allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# disallow creating .DS_Store on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+#
+# Safari
+#
+
+# backspace-key to go-back
+default write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
+
+#
+# kill applications
+#
+
+for app in "Finder" "Safari"; do
+    killall "$app" > /dev/null 2>&1
+done
+echo "Some of these changes require a logout/restart to take effect."
