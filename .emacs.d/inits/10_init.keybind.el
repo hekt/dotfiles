@@ -15,3 +15,18 @@
 (define-key global-map (kbd "C-c n") 'windmove-down) 
 (define-key global-map (kbd "C-c b") 'windmove-left) 
 (define-key global-map (kbd "C-c f") 'windmove-right)
+
+;; copy / paste / cut
+(defun paste-from-pasteboard ()
+  (interactive)
+  (and mark-active (filter-buffer-substring (region-beginning) (region-end) t))
+  (insert (ns-get-pasteboard)))
+(defun copy-to-pasteboard (p1 p2)
+  (interactive "r*")
+  (ns-set-pasteboard (buffer-substring p1 p2))
+  (message "Copied selection to pasteboard"))
+(defun cut-to-pasteboard (p1 p2) (interactive "r*")
+  (ns-set-pasteboard (filter-buffer-substring p1 p2 t)))
+(global-set-key (kbd "s-v") 'paste-from-pasteboard)
+(global-set-key (kbd "s-c") 'copy-to-pasteboard)
+(global-set-key (kbd "s-x") 'cut-to-pasteboard)

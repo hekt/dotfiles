@@ -59,6 +59,10 @@
 (add-hook 'comint-output-filter-functions
           'comint-watch-for-password-prompt)
 
+;; Separate kill-ring and OSX clipboard
+(setq interprogram-cut-function nil)
+(setq interprogram-paste-function nil)
+
 ;; sense-region
 (cua-mode t)
 (setq cua-enable-cua-keys nil)

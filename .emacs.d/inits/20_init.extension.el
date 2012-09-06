@@ -9,5 +9,3 @@
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
-;; clipboard
-(require 'osx-clipboard)
