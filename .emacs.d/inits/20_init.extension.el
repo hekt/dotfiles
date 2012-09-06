@@ -1,13 +1,5 @@
 ;; Extensions
 
-;; package
-(require 'package)
-(add-to-list 'package-archives 
-             '("MELPA" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-             '("Marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
-
 ;; recent files
 (require 'recentf)
 (setq recentf-max-menu-items 20)
@@ -24,9 +16,6 @@
         anything-c-source-emacs-functions
         ;; anything-c-source-colors
         ))
-
-;; magit
-(require 'magit)
 
 ;; auto complete
 (require 'auto-complete)
