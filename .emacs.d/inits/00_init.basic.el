@@ -36,9 +36,9 @@
     (setq initial-frame-alist
           (append (list
                    '(font . "Monaco-12")
-                   '(width . 81)
+                   '(width . 80)
                    '(height . 36)
-                   ;; '(width . 165)
+                   ;; '(width . 163)
                    ;; '(height . 64)
                    '(vertical-scroll-bars . nil)
                    ) 

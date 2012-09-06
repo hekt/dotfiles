@@ -1,7 +1,10 @@
 ;; markdown-mode
 
 (autoload 'markdown-mode "markdown-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mdown" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdwn" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
