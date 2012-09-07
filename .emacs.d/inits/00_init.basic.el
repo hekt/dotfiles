@@ -6,18 +6,16 @@
 (setq locale-coding-system 'utf-8)
 
 ;; path
-(dolist (dir (list
-              "/sbin"
-              "/usr/sbin"
-              "/bin"
-              "/usr/bin"
-              "/usr/local/bin"
-              (expand-file-name "~/bin")
-              (expand-file-name "~/.emacs.d/bin")
-              ))
+(dolist (dir (list "/sbin" "/usr/sbin" "/bin" "/usr/bin" "/usr/local/bin"
+                   (expand-file-name "~/bin")
+                   (expand-file-name "~/.emacs.d/bin")))
   (when (and (file-exists-p dir) (not (member dir exec-path)))
     (setenv "PATH" (concat dir ":" (getenv "PATH")))
     (setq exec-path (append (list dir) exec-path))))
+
+;; user info
+(setq user-full-name "hekt")
+(setq user-mail-address "hektorg@gmail.com")
 
 ;; display
 (tool-bar-mode 0)
@@ -59,7 +57,7 @@
 (add-hook 'comint-output-filter-functions
           'comint-watch-for-password-prompt)
 
-;; Separate kill-ring and OSX clipboard
+;; Disable the kill-ring and the system clipboard integration
 (setq interprogram-cut-function nil)
 (setq interprogram-paste-function nil)
 
