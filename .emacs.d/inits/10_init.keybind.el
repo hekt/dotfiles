@@ -10,6 +10,9 @@
 ;; anything
 (define-key global-map (kbd "C-c a") 'anything)
 
+;; magit
+(define-key global-map (kbd "C-c m") 'magit-status)
+
 ;; windmove
 (define-key global-map (kbd "C-c p") 'windmove-up)
 (define-key global-map (kbd "C-c n") 'windmove-down) 
