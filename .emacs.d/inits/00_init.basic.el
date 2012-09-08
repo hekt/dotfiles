@@ -20,6 +20,10 @@
 ;; display
 (tool-bar-mode 0)
 (if window-system (menu-bar-mode 1) (menu-bar-mode -1))
+(when window-system 
+    (setq frame-title-format
+          '("%S" (buffer-file-name 
+                  "%f" (dired-directory dired-directory "%b")))))
 
 (line-number-mode t)
 (column-number-mode t)
@@ -29,8 +33,8 @@
 (setq initial-buffer-choice t)
 (setq initial-scratch-message nil)
 
-;; initial
-(if (boundp 'window-system)
+;; initial-frame
+(when (boundp 'window-system)
     (setq initial-frame-alist
           (append (list
                    '(font . "Monaco-12")
