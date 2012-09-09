@@ -10,6 +10,6 @@ VIRTUALENVWRAPPER_PYTHON=py2.7.2
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make"
 
-alias ls="ls -la"
+alias ls="ls -alp"
 alias rm="rm -i"
 alias sudo="sudo "
