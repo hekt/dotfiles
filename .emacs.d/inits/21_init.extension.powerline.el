@@ -50,8 +50,8 @@ static char * arrow_right[] = {
 (defconst color1 "#859900")
 (defconst color2 "#586E75")
 (defconst color3 "#839496")
-(defconst forecolor1 "#FDF6E3")
-(defconst forecolor2 "#EEE8D5")
+(defconst fontcolor1 "#FDF6E3")
+(defconst fontcolor2 "#EEE8D5")
 
 (defvar arrow-right-1 (create-image (arrow-right-xpm color1 color2) 
                                     'xpm t :ascent 'center))
@@ -83,17 +83,17 @@ static char * arrow_right[] = {
 (make-face 'mode-line-color-1)
 (set-face-attribute 'mode-line-color-1 nil
                     :foreground color1
-                    :background forecolor1)
+                    :background fontcolor1)
 
 (make-face 'mode-line-color-2)
 (set-face-attribute 'mode-line-color-2 nil
                     :foreground color2
-                    :background forecolor2)
+                    :background fontcolor2)
 
 (make-face 'mode-line-color-3)
 (set-face-attribute 'mode-line-color-3 nil
                     :foreground color3
-                    :background forecolor1)
+                    :background fontcolor1)
 
 (set-face-attribute 'mode-line nil
                     :foreground color3
