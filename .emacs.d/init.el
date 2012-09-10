@@ -4,9 +4,9 @@
 
 (require 'package)
 (add-to-list 'package-archives 
-  '("MELPA" . "http://melpa.milkbox.net/packages/") t)
+  '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives 
-  '("Marmalade" . "http://marmalade-repo.org/packages/"))
+  '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (require 'init-loader)
