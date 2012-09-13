@@ -12,7 +12,7 @@ mkdir $backup_dir
 cd $dotfile_dir
 
 for dotfile in .?*; do
-    if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.osx' ]; then
+    if [ $dotfile != '..' ] && [ $dotfile != '.git' ]; then
         echo "$dotfile"
         if [ -e "$home_dir/$dotfile" ]; then
             echo -e "${ylw}===>${nrm} already exists in $home_dir"
