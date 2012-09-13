@@ -1,5 +1,6 @@
 export PATH=/usr/local/bin:$PATH
-export PS1="\[\033[33m\]\w \[\033[0m\]\$ "
+export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
+export PS2="\[\033[33m\]>\[\e[00m\] "
 export TERM="xterm-256color"
 
 # History
