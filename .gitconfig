@@ -6,6 +6,6 @@
 [core]
     editor = nano
     pager = less
-    excludesfile = ~/.gitignore-global
+    excludesfile = ~/.gitignore.global
 [color]
     ui = true
