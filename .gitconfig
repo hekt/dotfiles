@@ -1,11 +1,11 @@
 [include]
     path = ~/.gitconfig.local
 [user]
-	name = hekt
-	email = hektorg@gmail.com
+    name = hekt
+    email = hektorg@gmail.com
 [core]
-	editor = nano
-	pager = less
-	excludesfile = ~/.gitignore-global
+    editor = nano
+    pager = less
+    excludesfile = ~/.gitignore-global
 [color]
-	ui = true
+    ui = true
