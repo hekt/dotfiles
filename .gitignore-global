@@ -1,0 +1,9 @@
+*.local
+
+# OSX
+.DS_Store
+
+# Emacs
+*~3
+\#*#
+.#.*
