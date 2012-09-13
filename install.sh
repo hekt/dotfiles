@@ -4,18 +4,23 @@ home_dir="$HOME"
 dotfile_dir="$HOME/dotfiles"
 backup_dir="$HOME/dotfiles/dotbackups"
 
+ylw='\033[33m'
+grn='\033[32m'
+nrm='\033[m'
+
 mkdir $backup_dir
 cd $dotfile_dir
 
 for dotfile in .?*; do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ]; then
+        echo "$dotfile"
         if [ -e "$home_dir/$dotfile" ]; then
             mv "$home_dir/$dotfile" $backup_dir
-            echo "$dotfile already exists"
-            echo "move $dotfiles to $backup_dir"
+            echo -e "${ylw}===>${nrm} already exists in $home_dir"
+            echo -e "${ylw}===>${nrm} move to $backup_dir"
         fi
         ln -s "$dotfile_dir/$dotfile" $home_dir
-        echo "make symlink to $dotfile"
+        echo -e "${ylw}===>${nrm} make symlink"
     fi
 done
 
@@ -23,4 +28,4 @@ if [ ! "$(ls -A $backup_dir )" ]; then
     rmdir $backup_dir
 fi
 
-echo 'complete'
+echo -e "${grn}complete${nrm}"
