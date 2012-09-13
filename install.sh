@@ -12,7 +12,7 @@ mkdir $backup_dir
 cd $dotfile_dir
 
 for dotfile in .?*; do
-    if [ $dotfile != '..' ] && [ $dotfile != '.git' ]; then
+    if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.osx' ]; then
         echo "$dotfile"
         if [ -e "$home_dir/$dotfile" ]; then
             echo -e "${ylw}===>${nrm} already exists in $home_dir"
@@ -28,6 +28,11 @@ if [ ! "$(ls -A $backup_dir )" ]; then
     echo "$backup_dir is empty"
     rmdir $backup_dir
     echo "remove $backup_dir"
+fi
+
+if [ `uname` == 'Darwin' ] && [ -e "$dotfile_dir/.osx" ]; then
+    "$dotfile_dir/.osx"
+    echo "run .osx"
 fi
 
 echo -e "${grn}complete${nrm}"
