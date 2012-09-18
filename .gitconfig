@@ -4,7 +4,7 @@
     name = hekt
     email = hektorg@gmail.com
 [core]
-    editor = nano
+    editor = vi
     pager = less
     excludesfile = ~/.gitignore.global
 [color]
