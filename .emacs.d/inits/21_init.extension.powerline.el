@@ -1,5 +1,7 @@
 ;; powerline.el
 
+(when window-system (progn
+
 (defun arrow-right-xpm (color1 color2)
   "Return an XPM right arrow string representing."
   (format "/* XPM */
@@ -102,3 +104,5 @@ static char * arrow_right[] = {
 (set-face-attribute 'mode-line-inactive nil
                     :foreground "#002B35"
                     :background "#000")
+
+))
