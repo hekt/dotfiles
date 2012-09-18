@@ -14,6 +14,7 @@ source ~/.pythonbrew/bin/virtualenvwrapper.sh
 VIRTUALENVWRAPPER_PYTHON=py2.7.2
 
 # Aliases
+alias emacs="emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make"
 
@@ -21,4 +22,3 @@ alias ghcm="ghc --make"
 alias ls="ls -alpvG"
 alias rm="rm -i"
 alias sudo="sudo "
-
