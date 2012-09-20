@@ -1,0 +1,15 @@
+*.local
+
+# OSX
+.DS_Store
+
+# Emacs
+*~
+\#*#
+.#.*
+
+# Git
+.git/
+
+# Python
+*.pyc
