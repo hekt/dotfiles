@@ -66,7 +66,7 @@ static char * arrow_right[] = {
 
   (setq-default mode-line-format
     (list '(:eval (concat (propertize 
-                           (concat " " (format-mode-line mode-name) " ") 
+                           (format " %s " (format-mode-line mode-name)) 
                            'face 'mode-line-color-1)
                           (propertize " " 'display arrow-right-1)))
           '(:eval (concat (propertize " %* %b " 'face 'mode-line-color-2)
