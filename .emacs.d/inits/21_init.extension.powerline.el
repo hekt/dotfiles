@@ -65,7 +65,9 @@ static char * arrow_right[] = {
                                     'xpm t :ascent 'center))
 
 (setq-default mode-line-format
- (list  '(:eval (concat (propertize " %m " 'face 'mode-line-color-1)
+ (list  '(:eval (concat (propertize 
+                         (concat " " (format-mode-line mode-name) " ") 
+                         'face 'mode-line-color-1)
                         (propertize " " 'display arrow-right-1)))
         '(:eval (concat (propertize " %* %b " 'face 'mode-line-color-2)
                         (propertize " " 'display arrow-right-2)))
