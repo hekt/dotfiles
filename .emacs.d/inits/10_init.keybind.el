@@ -51,7 +51,6 @@
 ;; term-mode
 (add-hook 'term-mode-hook '(lambda()
   (define-key term-raw-map (kbd "M-x") 'nil)
-  (define-key term-raw-map (kbd "ESC") 'term-send-raw)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
   (define-key term-raw-map (kbd "C-o") 'other-window)
   (define-key term-raw-map (kbd "C-c a") 'anything)
