@@ -7,6 +7,10 @@
 ;; sence-region
 (define-key global-map (kbd "C-c s") 'cua-set-rectangle-mark)
 
+;; ansi-term
+(define-key global-map (kbd "C-c t") '(lambda () 
+                                        (interactive) (ansi-term "/bin/bash")))
+
 ;; anything
 (define-key global-map (kbd "C-c a") 'anything)
 
@@ -47,6 +51,7 @@
 ;; term-mode
 (add-hook 'term-mode-hook '(lambda()
   (define-key term-raw-map (kbd "M-x") 'nil)
+  (define-key term-raw-map (kbd "ESC") 'term-send-raw)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
   (define-key term-raw-map (kbd "C-o") 'other-window)
   (define-key term-raw-map (kbd "C-c a") 'anything)
@@ -55,12 +60,4 @@
   (define-key term-raw-map (kbd "C-c n") 'windmove-down)
   (define-key term-raw-map (kbd "C-c b") 'windmove-left)
   (define-key term-raw-map (kbd "C-c f") 'windmove-right)
-  (when window-system
-    (progn
-      (define-key term-raw-map (kbd "s-v") 'paste-from-pasteboard)
-      (define-key term-raw-map (kbd "s-c") 'copy-to-pasteboard)
-      (define-key term-raw-map (kbd "s-x") 'cut-to-pasteboard))
-    (progn
-      (define-key global-map (kbd "C-c M-v") 'osx-pbpaste)
-      (define-key global-map (kbd "C-c M-c") 'osx-pbcopy)
-      (define-key global-map (kbd "C-c M-x") 'osx-pbcut)))))
+))
