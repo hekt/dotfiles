@@ -6,12 +6,7 @@
 (defun md-to-sh (start end)
   (interactive "r")
   (replace-regexp
-   "<!-- \\(.+\\) -->
-
-<pre><code>
-\\(\\(.*?
-*?\\)+?\\)
-</code></pre>"
+   "<!-- \\(.+\\) -->\n\n<pre><code>\n\\(\\(.*?\n*?\\)+?\\)\n</code></pre>"
    "<pre class=\"brush: \\1\">\\2</pre>" 
    nil start end))
 
@@ -19,12 +14,15 @@
 (defun add-css-vendor-prefixes (start end)
   (interactive "r")
   (replace-regexp
-   "\\( *\\)\\(.*\\)"
-   "\\1-webkit-\\2
-\\1-moz-\\2
-\\1-ms-\\2
-\\1-o-\\2
-\\&"
+   "\\([\s\t]*\\)\\(.*\\)"
+   "\\1-webkit-\\2\n\\1-moz-\\2\n\\1-ms-\\2\n\\1-o-\\2\n\\&"
+   nil start end))
+
+(defun add-css-vendor-prefixes-bg-gradient (start end)
+  (interactive "r")
+  (replace-regexp
+   "\\([\s\t]*background\\(?:-image\\)?[\s\t]*:[\s\t]*\\)\\(\\(?:.\\|\n\\)+;\\)"
+   "\\1-webkit-\\2\n\\1-moz-\\2\n\\1-ms-\\2\n\\1-o-\\2\n\\&"
    nil start end))
 
 ;; 
