@@ -1,6 +1,13 @@
-;; Keybinds
+;; 
+;; keybinds
+;; 
 
 (setq mac-option-modifier 'meta)
+
+;;
+;; global-map
+;; 
+
 (define-key global-map (kbd "C-h") 'delete-backward-char)
 (define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-c r") 'replace-string)
@@ -50,7 +57,10 @@
     )
 )
 
-;; term-mode
+;; 
+;; term-raw-map
+;; 
+
 (add-hook 'term-mode-hook '(lambda()
   (define-key term-raw-map (kbd "M-x") 'nil)
   (define-key term-raw-map (kbd "C-y") 'term-paste)
