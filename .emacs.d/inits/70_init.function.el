@@ -14,15 +14,20 @@
 (defun add-css-vendor-prefixes (start end)
   (interactive "r")
   (replace-regexp
-   "\\([\s\t]*\\)\\(.*\\)"
+   "\\([\s\t]*\\)\\(\\(?:.\\|\n\\)+;\\)"
    "\\1-webkit-\\2\n\\1-moz-\\2\n\\1-ms-\\2\n\\1-o-\\2\n\\&"
    nil start end))
-
-(defun add-css-vendor-prefixes-bg-gradient (start end)
+(defun add-css-vendor-prefixes-to-value (start end)
   (interactive "r")
   (replace-regexp
-   "\\([\s\t]*background\\(?:-image\\)?[\s\t]*:[\s\t]*\\)\\(\\(?:.\\|\n\\)+;\\)"
+   "\\([\s\t]*[a-zA-Z-]+[\s\t]*:[\s\t]*\\)\\(\\(?:.\\|\n\\)+;\\)"
    "\\1-webkit-\\2\n\\1-moz-\\2\n\\1-ms-\\2\n\\1-o-\\2\n\\&"
+   nil start end))
+(defun add-css-vendor-prefixes-to-both (start end)
+  (interactive "r")
+  (replace-regexp
+   "\\([\s\t]*\\)\\([a-zA-Z-]+[s\t]*:[\s\t]*\\)\\(\\(?:.\\|\n\\)+;\\)"
+   "\\1-webkit-\\2-webkit-\\3\n\\1-moz-\\2-moz-\\3\n\\1-ms-\\2-ms-\\3\n\\1-o-\\2-o-\\3\n\\&"
    nil start end))
 
 ;; 
