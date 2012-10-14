@@ -6,7 +6,7 @@
 # Emacs
 *~
 \#*#
-.#.*
+.#*
 
 # Python
 *.pyc
