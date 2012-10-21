@@ -5,7 +5,7 @@ export TERM="xterm-256color"
 
 # History
 export HISTCONTROL=ignoredups
-export HISTIGNORE="ls*:cd*"
+export HISTIGNORE="cd*"
 export HISTSIZE=2000
 
 # Pythonbrew
