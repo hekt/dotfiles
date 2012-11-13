@@ -1,4 +1,4 @@
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
 export PS2="\[\033[33m\]>\[\e[00m\] "
 export TERM="xterm-256color"
@@ -7,11 +7,6 @@ export TERM="xterm-256color"
 export HISTCONTROL=ignoredups
 export HISTIGNORE="cd*"
 export HISTSIZE=2000
-
-# Pythonbrew
-source ~/.pythonbrew/etc/bashrc
-source ~/.pythonbrew/bin/virtualenvwrapper.sh
-VIRTUALENVWRAPPER_PYTHON=py2.7.2
 
 # Aliases
 alias emacs="emacs -nw"
@@ -23,3 +18,6 @@ alias ls="ls -alpvG"
 alias rm="rm -i"
 alias sudo="sudo "
 alias rsync="rsync --exclude-from ~/.rsyncignore"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

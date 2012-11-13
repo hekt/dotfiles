@@ -19,7 +19,7 @@
 (setq user-mail-address "hektorg@gmail.com")
 
 ;; display
-(tool-bar-mode 0)
+;; (tool-bar-mode 0)
 (if window-system (menu-bar-mode 1) (menu-bar-mode -1))
 (when window-system 
     (setq frame-title-format
@@ -69,12 +69,3 @@
 ;; sense-region
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
-
-;; template
-(setq auto-insert-directory "~/.emacs.d/templates/")
-(load "autoinsert" t)
-(setq auto-insert-alist
-      (append '(("\\.html" . "html5.template.html"))
-              '(("\\.js" . "jquery.template.js"))
-              auto-insert-alist))
-(add-hook 'find-file-hooks 'auto-insert)
