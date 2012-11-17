@@ -1,7 +1,7 @@
 #!/bin/sh
 ISRC=`~/bin/inputsource | sed 's/.*\.//g'`
 if [ $ISRC = 'Roman' ]; then
-    echo "[A]"
+    echo "#[fg=white,bg=colour240] A #[default]"
 else
-    echo "[J]"
+    echo "#[fg=white,bg=colour240] J #[default]"
 fi
