@@ -1,6 +1,6 @@
 ;; appearance
 
-(if window-system (load-theme 'solarized-dark t) (load-theme 'ir-black t))
+(load-theme 'solarized-dark t)
 
 ;; set shell-mode colors
 (when window-system
