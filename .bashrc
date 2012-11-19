@@ -9,7 +9,7 @@ export HISTIGNORE="cd*"
 export HISTSIZE=2000
 
 # Aliases
-alias emacs="emacs -nw"
+alias emacs="env TERM=xterm emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make"
 
