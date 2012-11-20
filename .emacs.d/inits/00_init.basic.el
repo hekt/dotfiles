@@ -69,3 +69,10 @@
 ;; sense-region
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
+
+;; auto complete ( { [ "
+(global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+(setq skeleton-pair 1)
