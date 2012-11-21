@@ -20,9 +20,6 @@
 (define-key global-map (kbd "C-c t") '(lambda () 
                                         (interactive) (ansi-term "/bin/bash")))
 
-;; anything
-(define-key global-map (kbd "C-c a") 'anything)
-
 ;; magit
 (define-key global-map (kbd "C-c m") 'magit-status)
 

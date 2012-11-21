@@ -10,3 +10,6 @@
         anything-c-source-emacs-functions
         ;; anything-c-source-colors
         ))
+
+;; keybind
+(define-key global-map (kbd "C-c a") 'anything)
