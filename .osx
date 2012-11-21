@@ -20,7 +20,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 #
 
 # backspace-key to go-back
-default write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
 #
 # kill applications
