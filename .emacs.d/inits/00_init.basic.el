@@ -26,10 +26,6 @@
           '("%S" (buffer-file-name 
                   "%f" (dired-directory dired-directory "%b")))))
 
-(line-number-mode t)
-(column-number-mode t)
-(global-hl-line-mode t)
-
 (setq inhibit-splash-screen t)
 (setq initial-buffer-choice t)
 (setq initial-scratch-message nil)
