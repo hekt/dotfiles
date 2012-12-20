@@ -44,6 +44,9 @@
                   initial-frame-alist)))
 (setq default-frame-alist initial-frame-alist)
 
+;; hl-line
+(global-hl-line-mode 1)
+
 ;; edit
 (setq scroll-step 1)
 (setq-default tab-width 4 indent-tabs-mode nil)
