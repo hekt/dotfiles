@@ -2,6 +2,20 @@
 ;; Functions
 ;;
 
+;; Toggle theme light and dark
+(defun light-theme ()
+  (interactive)
+  (progn
+    (load-theme 'solarized-light t)
+    (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
+    ))
+(defun dark-theme ()
+  (interactive)
+  (progn
+    (load-theme 'solarized-dark t)
+    (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
+    ))
+
 ;; convert html to syntax-highlighter compatible
 (defun md-to-sh (start end)
   (interactive "r")
