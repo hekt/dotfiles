@@ -9,7 +9,7 @@ else
     if [ $((bt)) -gt 50 ]; then
         printf ")#[default]%02d#[default]}" $bt
     elif [ $((bt)) -gt 25 ]; then
-        printf ")#[fg=brightyellow]%02d#[default]}" $bt
+        printf ")#[fg=default]%02d#[default]}" $bt
     else
         printf ")#[fg=red]%02d#[default]}" $bt
     fi
