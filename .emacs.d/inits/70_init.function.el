@@ -8,14 +8,14 @@
   (progn
     (load-theme 'solarized-light t)
     (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
-    (shell-command "~/.iterm/solarized-light.sh")
+    (shell-command "osascript ~/.iterm/solarized-light.scpt")
     ))
 (defun dark-theme ()
   (interactive)
   (progn
     (load-theme 'solarized-dark t)
     (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
-    (shell-command "~/.iterm/solarized-dark.sh")
+    (shell-command "osascript ~/.iterm/solarized-dark.scpt")
     ))
 
 ;; convert html to syntax-highlighter compatible
