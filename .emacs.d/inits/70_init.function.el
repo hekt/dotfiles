@@ -7,6 +7,9 @@
   (interactive)
   (progn
     (load-theme 'solarized-light t)
+    ;; auto-complete
+    (set-face-foreground 'ac-completion-face "white")
+    (set-face-background 'ac-completion-face "yellow")
     (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
     (shell-command "osascript ~/.iterm/solarized-light.scpt")
     ))
@@ -14,8 +17,12 @@
   (interactive)
   (progn
     (load-theme 'solarized-dark t)
+    ;; auto-complete
+    (set-face-foreground 'ac-completion-face "black")
+    (set-face-background 'ac-completion-face "yellow")
     (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
     (shell-command "osascript ~/.iterm/solarized-dark.scpt")
+    inter
     ))
 
 ;; convert html to syntax-highlighter compatible
