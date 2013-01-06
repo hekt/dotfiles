@@ -9,7 +9,6 @@
 ;; 
 
 (define-key global-map (kbd "C-h") 'delete-backward-char)
-(define-key global-map (kbd "C-o") 'other-window)
 (define-key global-map (kbd "C-c r") 'replace-string)
 (define-key global-map (kbd "C-c M-r") 'replace-regexp)
 
