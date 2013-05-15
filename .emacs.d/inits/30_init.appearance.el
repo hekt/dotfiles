@@ -1,6 +1,10 @@
 ;; appearance
 
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
+
+;; auto-complete
+(set-face-foreground 'ac-completion-face "white")
+(set-face-background 'ac-completion-face "yellow")
 
 ;; set shell-mode colors
 (when window-system
