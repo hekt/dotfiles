@@ -10,6 +10,10 @@
 
 # Git
 .git/
+.gitignore
 
 # Python
 *.pyc
+
+# venv
+venv/
