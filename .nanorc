@@ -38,9 +38,9 @@ include "/usr/local/share/nano/sh.nanorc"
 include "/usr/local/share/nano/xml.nanorc"
 
 # from nanosyntax http://code.google.com/p/nanosyntax/
-include "/usr/local/share/nano/js.nanorc"
-include "/usr/local/share/nano/rcfiles-new.nanorc"
-include "/usr/local/share/nano/nanorc.nanorc"
+# include "/usr/local/share/nano/js.nanorc"
+# include "/usr/local/share/nano/rcfiles-new.nanorc"
+# include "/usr/local/share/nano/nanorc.nanorc"
 
 # mysyntaxes
-include "/usr/local/share/nano/markdown.nanorc"
+# include "/usr/local/share/nano/markdown.nanorc"
