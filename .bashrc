@@ -1,4 +1,4 @@
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
 export PS2="\[\033[33m\]>\[\e[00m\] "
 export TERM="xterm-256color"
@@ -18,6 +18,9 @@ alias ls="ls -alpvG"
 alias rm="rm -i"
 alias sudo="sudo "
 alias rsync="rsync --exclude-from ~/.rsyncignore"
+
+## cabal
+export PATH=$HOME/.cabal/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
