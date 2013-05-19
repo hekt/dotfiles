@@ -22,7 +22,6 @@
     (set-face-background 'ac-completion-face "yellow")
     (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
     (shell-command "osascript ~/.iterm/solarized-dark.scpt")
-    inter
     ))
 
 ;; convert html to syntax-highlighter compatible
