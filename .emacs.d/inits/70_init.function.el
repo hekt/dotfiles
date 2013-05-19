@@ -53,6 +53,12 @@
    "\\1-webkit-\\2-webkit-\\3\n\\1-moz-\\2-moz-\\3\n\\1-ms-\\2-ms-\\3\n\\1-o-\\2-o-\\3\n\\&"
    nil start end))
 
+;; adjust time strings
+(defun time-adjust (time start end)
+  (interactive "nTime(ms): \nr")
+  (shell-command-on-region start end (format "time_adjust.py %d" time) t))
+
+
 ;; 
 ;; Advices
 ;; 
