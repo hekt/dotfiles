@@ -11,7 +11,13 @@ c.InteractiveShellApp.exec_lines = [
 
 # prompt
 c.PromptManager.in_template = "{color.Cyan}>>> "
-c.PromptManager.out_template = "{color.Green}--> "
+c.PromptManager.out_template = "{color.Green}==> "
+
+# disable a blank line after output
+c.TerminalInteractiveShell.separate_in = ''
+
+# disable banner
+c.TerminalIPythonApp.display_banner = False
 
 # editor
 c.TerminalInteractiveShell.editor = 'nano'
