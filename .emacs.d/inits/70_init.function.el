@@ -5,24 +5,21 @@
 ;; Toggle theme light and dark
 (defun light-theme ()
   (interactive)
-  (progn
-    (load-theme 'solarized-light t)
-    ;; auto-complete
-    (set-face-foreground 'ac-completion-face "white")
-    (set-face-background 'ac-completion-face "yellow")
-    (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
-    (shell-command "osascript ~/.iterm/solarized-light.scpt")
-    ))
+  (load-theme 'solarized-light t)
+  ;; auto-complete
+  (set-face-foreground 'ac-completion-face "white")
+  (set-face-background 'ac-completion-face "yellow")
+  (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
+  (shell-command "osascript ~/.iterm/solarized-light.scpt"))
+
 (defun dark-theme ()
   (interactive)
-  (progn
-    (load-theme 'solarized-dark t)
-    ;; auto-complete
-    (set-face-foreground 'ac-completion-face "black")
-    (set-face-background 'ac-completion-face "yellow")
-    (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
-    (shell-command "osascript ~/.iterm/solarized-dark.scpt")
-    ))
+  (load-theme 'solarized-dark t)
+  ;; auto-complete
+  (set-face-foreground 'ac-completion-face "black")
+  (set-face-background 'ac-completion-face "yellow")
+  (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
+  (shell-command "osascript ~/.iterm/solarized-dark.scpt"))
 
 ;; convert html to syntax-highlighter compatible
 (defun md-to-sh (start end)
@@ -57,6 +54,11 @@
   (interactive "nTime(ms): \nr")
   (shell-command-on-region start end (format "time_adjust.py %d" time) t))
 
+;; normalization parentheses
+(defun parentheses-normalize (start end)
+  (interactive "r")
+  (replace-string "（" " (" nil start end)
+  (replace-string "）" ") " nil start end))
 
 ;; 
 ;; Advices
