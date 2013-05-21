@@ -24,3 +24,8 @@ c.TerminalInteractiveShell.editor = 'nano'
 
 # exit without confirmation
 c.TerminalInteractiveShell.confirm_exit = False
+
+# aliases
+c.AliasManager.user_aliases = [
+    ('ls', 'ls -alpvG'),
+]
