@@ -5,4 +5,5 @@
 (setq js2-basic-offset 2)
 (setq-default js2-global-externs 
               '("FileReader" "jQuery" "$" "setTimeout" "clearTimeout"
-                "setInterval" "clearInterval" "location" "console" "JSON"))
+                "setInterval" "clearInterval" "location" "console" "JSON"
+                "chrome"))
