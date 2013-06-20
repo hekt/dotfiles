@@ -22,5 +22,8 @@ alias rsync="rsync --exclude-from ~/.rsyncignore"
 ## cabal
 export PATH=$HOME/.cabal/bin:$PATH
 
+## npm
+export PATH=/usr/local/share/npm/bin:$PATH
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
