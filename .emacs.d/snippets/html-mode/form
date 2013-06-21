@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: form
+# key: form
+# --
+<form id=="$1" method="$2" action="$3">
+  $0
+</form>

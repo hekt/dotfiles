@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: address
+# key: address
+# --
+<address$1>$0</address>
