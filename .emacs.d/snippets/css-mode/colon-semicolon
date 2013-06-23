@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: colon and semicolon
+# key::
+# --
+$1: $0 ;

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: next sets
+# key: ;
+# --
+;
+        $1: $0 ;
