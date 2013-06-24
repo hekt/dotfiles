@@ -5,5 +5,5 @@
 }
 
 ${1:selector} {
-  ${2:property}: $0 ;
-  }
+  ${2:property}: ${3:value} ;$0
+}
