@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dotted border
+# key: dotted
+# --
+${1:1px} dotted ${2:transparent}

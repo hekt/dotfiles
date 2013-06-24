@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: charset
+# key: char
+# --
+@charset "${1:utf-8}";
