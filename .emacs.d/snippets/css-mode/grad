@@ -2,4 +2,4 @@
 # name: linear-gradient
 # key: grad
 # --
-linear-gradient(${1:to bottom}, $2, $3)
+linear-gradient(${1:to bottom}, ${2:from}, ${3:to})

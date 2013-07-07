@@ -2,6 +2,6 @@
 # name: ol
 # key: ol
 # --
-<ol$1>
-  <li$2>$0
+<ol>
+  <li>$0
 </ol>

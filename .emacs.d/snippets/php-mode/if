@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: p
-# key: p
+# name: if
+# key: if
 # --
-<p$1>
+if ($1) {
   $0
-</p>
+}

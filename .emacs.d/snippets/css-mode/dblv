@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: double values
+# key: dblv
+# --
+$1 $1 $0

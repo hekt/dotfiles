@@ -2,6 +2,6 @@
 # name: article
 # key: article
 # --
-<article$1>
+<article>
   $0
 </article>

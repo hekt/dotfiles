@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: Doctype html5
-# key: doctype
+# key: <!
 # --
-<!DOCTYPE html>
+<!DOCTYPE ${1:html}

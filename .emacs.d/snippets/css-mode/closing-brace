@@ -5,5 +5,5 @@
 }
 
 ${1:selector} {
-  ${2:property}: ${3:value} ;$0
+  ${2:property}: ${3:${2:$(get-css-default-value yas/text)}} ;$0
 }

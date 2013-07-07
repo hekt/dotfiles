@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: block braces
+# key: {-
+# --
+{
+  ${1:selector} {$0}
+  

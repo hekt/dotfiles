@@ -2,4 +2,4 @@
 # name: dotted border
 # key: dotted
 # --
-${1:1px} dotted ${2:transparent}
+${1:1px} dotted ${2:transparent} $0

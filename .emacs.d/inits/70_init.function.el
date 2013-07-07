@@ -60,6 +60,11 @@
   (replace-string "（" " (" nil start end)
   (replace-string "）" ") " nil start end))
 
+;; revert-buffer noconfirmation
+(defun rebuf ()
+  (interactive)
+  (revert-buffer t t))
+
 ;; 
 ;; Advices
 ;; 
