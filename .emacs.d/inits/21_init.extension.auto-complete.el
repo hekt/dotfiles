@@ -3,7 +3,7 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
-(setq ac-auto-start t)
+(setq ac-auto-start 4)
 (setq ac-use-menu-map t)
 
 ;; keybind
