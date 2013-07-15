@@ -11,7 +11,6 @@
   (set-face-background 'ac-completion-face "yellow")
   (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
   (shell-command "osascript ~/.iterm/solarized-light.scpt"))
-
 (defun dark-theme ()
   (interactive)
   (load-theme 'solarized-dark t)
@@ -60,7 +59,7 @@
   (replace-string "（" " (" nil start end)
   (replace-string "）" ") " nil start end))
 
-;; revert-buffer noconfirmation
+;; revert-buffer with no confirmation
 (defun rebuf ()
   (interactive)
   (revert-buffer t t))
