@@ -2,24 +2,6 @@
 ;; Functions
 ;;
 
-;; Toggle theme light and dark
-(defun light-theme ()
-  (interactive)
-  (load-theme 'solarized-light t)
-  ;; auto-complete
-  (set-face-foreground 'ac-completion-face "white")
-  (set-face-background 'ac-completion-face "yellow")
-  (shell-command "tmux source-file ~/.tmux/solarized-light.conf")
-  (shell-command "osascript ~/.iterm/solarized-light.scpt"))
-(defun dark-theme ()
-  (interactive)
-  (load-theme 'solarized-dark t)
-  ;; auto-complete
-  (set-face-foreground 'ac-completion-face "black")
-  (set-face-background 'ac-completion-face "yellow")
-  (shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
-  (shell-command "osascript ~/.iterm/solarized-dark.scpt"))
-
 ;; convert html to syntax-highlighter compatible
 (defun md-to-sh (start end)
   (interactive "r")
