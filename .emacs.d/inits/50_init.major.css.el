@@ -16,6 +16,7 @@
 (defun scss-compile-success (name)
   (let ((w (get-buffer-window name)))
     (if w (delete-window w)))
+  (kill-buffer name)
   (message "success"))
 
 (defun scss-compile-failure (name)
