@@ -7,8 +7,8 @@
 (setq scss-compile-at-save nil)
 
 (defun scss-mode-compile-function ()
-  (let ((name "*SASS Compile-Log*")
-        (status (compile-scss-with-prefixes-addition "*SASS Compile-Log*")))
+  (let* ((name "*SASS Compile-Log*")
+         (status (compile-scss-with-prefixes-addition name)))
     (if (eq status 0)
         (scss-compile-success name)
       (scss-compile-failure name))))
