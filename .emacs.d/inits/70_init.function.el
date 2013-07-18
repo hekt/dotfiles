@@ -14,7 +14,7 @@
 (defun add-css-vendor-prefixes (start end)
   (interactive "r")
   (replace-regexp
-   "\\([\s\t]*\\)\\(\\(?:.\\|\n\\)+;\\)"
+   "\\([\s\t]*\\)\\(\\(?:.+\\|\n\\)+;\\)"
    "\\1-webkit-\\2\n\\1-moz-\\2\n\\1-ms-\\2\n\\1-o-\\2\n\\&"
    nil start end))
 (defun add-css-vendor-prefixes-to-value (start end)
@@ -34,6 +34,14 @@
 (defun time-adjust (time start end)
   (interactive "nTime(ms): \nr")
   (shell-command-on-region start end (format "time_adjust.py %d" time) t))
+
+;; add vendor prefixes then compile scss
+(defun compile-scss-with-prefixes-addition (buffer)
+  (interactive)
+  (call-process-region
+   (point-min) (point-max)
+   "compile_scss_with_vendor_prefixes.py" nil buffer t
+   (format "%s.css" (file-name-sans-extension (buffer-file-name)))))
 
 ;; normalization parentheses
 (defun parentheses-normalize (start end)
