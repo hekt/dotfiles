@@ -3,7 +3,7 @@
 ;; modeline
 (setq-default
  mode-line-format
- '(""
+ '(
    (:eval
     (cond (buffer-read-only
            (propertize " RO " 'face 'mode-line-read-only-face))
@@ -13,19 +13,16 @@
    " "
    mode-line-buffer-identification
    "   ("
+   (column-number-mode "%2c: ")
    (line-number-mode "%2l")
    (:eval (format "/%d" (count-lines (point-max) (point-min))))
-   (column-number-mode ", %2c")
-   ")  "
-   global-mode-string
-   " ["
+   ")   ["
    mode-name
    mode-line-process
-   (:eval (propertize (format-mode-line minor-mode-alist)
-                      'face 'mode-line-minor-mode-face))
+   minor-mode-alist
    "]"
-   (which-func-mode ("" which-func-format "-"))
-   " "))
+   "  "   global-mode-string
+   ))
 
 (make-face 'mode-line-read-only-face)
 (set-face-attribute 'mode-line-read-only-face nil
