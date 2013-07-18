@@ -4,4 +4,5 @@
 (setq popwin:special-display-config '(("*Help*")
                                       ("*Completions*")
                                       ("*compilatoin*")
-                                      ("*Occur*")))
+                                      ("*Occur*")
+                                      ("*Backtrace*")))
