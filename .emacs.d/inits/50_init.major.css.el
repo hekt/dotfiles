@@ -6,6 +6,7 @@
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
 (setq scss-compile-at-save nil)
 
+(push '("*SASS Compile-Log*") popwin:special-display-config)
 (defun scss-mode-compile-function ()
   (let* ((name "*SASS Compile-Log*")
          (status (compile-scss-with-prefixes-addition name)))
@@ -14,9 +15,6 @@
       (scss-compile-failure name))))
 
 (defun scss-compile-success (name)
-  (let ((w (get-buffer-window name)))
-    (if w (delete-window w)))
-  (kill-buffer name)
   (message "success"))
 
 (defun scss-compile-failure (name)
