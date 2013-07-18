@@ -22,7 +22,8 @@
   (message "failure"))
 
 (defun scss-mode-after-save-hooks ()
-  (scss-mode-compile-function))
+  (unless (string-match "^_" (file-name-nondirectory (buffer-file-name)))
+    (scss-mode-compile-function)))
 (defun scss-mode-hooks ()
   (add-hook 'after-save-hook 'scss-mode-after-save-hooks nil 'make-it-local))
 (add-hook 'scss-mode-hook 'scss-mode-hooks)
