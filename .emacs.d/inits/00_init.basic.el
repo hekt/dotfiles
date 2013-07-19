@@ -17,7 +17,7 @@
 ;; editing
 (setq scroll-step 1)
 (setq-default tab-width 4 indent-tabs-mode nil)
-(setq-default fill-column 79)
+(setq-default fill-column 72)
 
 ;; backup
 (setq make-backup-files nil)
