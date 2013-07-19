@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-
 """ Adjust time strings
 
 Example:
@@ -31,7 +30,7 @@ def str2delta(s):
         raise ValueError("minutes must be positive integer and less then 60.")
     elif not (0 <= s < 60):
         raise ValueError("seconds must be positive number and less then 60.")
-    
+
     return timedelta(hours=h, minutes=m, seconds=s)
 
 
