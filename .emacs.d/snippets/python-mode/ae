@@ -1,0 +1,4 @@
+# name: self.assertEqual(e, a)
+# key: ae
+# --
+self.assertEqual(e, a)
