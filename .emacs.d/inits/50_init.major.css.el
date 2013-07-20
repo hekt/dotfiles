@@ -9,7 +9,7 @@
 (push '("*SASS Compile-Log*") popwin:special-display-config)
 (defun scss-mode-compile-function ()
   (let* ((name "*SASS Compile-Log*")
-         (status (compile-scss-with-prefixes-addition name)))
+         (status (compile-scss-with-preprocessor name)))
     (if (eq status 0)
         (scss-compile-success name)
       (scss-compile-failure name))))

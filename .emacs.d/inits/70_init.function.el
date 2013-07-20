@@ -27,14 +27,15 @@
 (defun time-adjust (time start end)
   "Replace time string by time_adjust.py"
   (interactive "nTime(ms): \nr")
-  (shell-command-on-region start end (format "time_adjust.py %d" time) t))
+  (shell-command-on-region
+   start end (format "time_adjust.py %d" time) t))
 
-(defun compile-scss-with-prefixes-addition (buffer)
-  "Add CSS vendor prefix then compile SCSS to CSS."
+(defun compile-scss-with-preprocessor (buffer)
+  "Compile scss file via preprocess script."
   (interactive)
   (call-process-region
    (point-min) (point-max)
-   "compile_scss_with_vendor_prefixes.py" nil buffer t
+   "scss_preprocessor.py" nil buffer t
    (format "%s.css" (file-name-sans-extension (buffer-file-name)))))
 
 (defun parentheses-normalize (start end)

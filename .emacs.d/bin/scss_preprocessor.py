@@ -11,8 +11,8 @@ PREFIXES = ["-webkit-", "-moz-", "-ms-", "-o-", ""]
 
 
 def addPrefixes(s, prop):
-    reg = re.compile(r"(?:^|[\s\t\n\r;]){0}[\s\S]*?(:[\s\S]*?;)".format(prop),
-                     re.M)
+    reg_str = r"(?:^|(?<=[^a-z-])){0}[\s\t\n\r]*?(:[\s\S]*?;)".format(prop)
+    reg = re.compile(reg_str, re.M)
     repl = lambda m: "".join([p + prop + m.group(1) for p in PREFIXES])
 
     return re.sub(reg, repl, s)
@@ -27,10 +27,14 @@ def replaceRem(s):
     define actual value.
     """
 
-    fs_reg = re.compile(r"(font[\s\t\n\r]*?:.*?)(?<=[^/])([0-9\.]+)rem(.*?;)")
+    fs_reg_str = (r"(font[\s\t\n\r]*?:[a-z0-9-/\s\t\n\r]*?)"
+                  "(?<=[^/])([0-9\.]+)rem(.*?;)")
+    fs_reg = re.compile(fs_reg_str)
     fs_repl = lambda m: ("{0}{1}em{2}font-size:{1}rem;"
                          .format(m.group(1), m.group(2), m.group(3)))
-    lh_reg = re.compile(r"(font[\s\t\n\r]*?:.*?)(?<=/)([0-9\.]+)rem(.*?;)")
+    lh_reg_str = (r"(font[\s\t\n\r]*?:[a-z0-9-/\s\t\n\r]*?)"
+                  "(?<=/)([0-9\.]+)rem(.*?;)")
+    lh_reg = re.compile(lh_reg_str)
     lh_repl = lambda m: ("{0}{1}em{2}line-height:{1}rem;"
                          .format(m.group(1), m.group(2), m.group(3)))
 
