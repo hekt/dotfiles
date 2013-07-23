@@ -25,5 +25,8 @@ export PATH=$HOME/.cabal/bin:$PATH
 ## npm
 export PATH=/usr/local/share/npm/bin:$PATH
 
+## pythonbrew
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
