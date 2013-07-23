@@ -24,6 +24,18 @@
    "\\1-webkit-\\2-webkit-\\3\n\\1-moz-\\2-moz-\\3\n\\1-ms-\\2-ms-\\3\n\\1-o-\\2-o-\\3\n\\&"
    nil start end))
 
+(defun parentheses-normalize (start end)
+  "Replace multibyte parentheses to ascii parentheses"
+  (interactive "r")
+  (replace-string "（" " (" nil start end)
+  (replace-string "）" ") " nil start end))
+
+(defun rebuf ()
+  "`revert-buffer` with no confirmation"
+  (interactive)
+  (revert-buffer t t))
+
+
 (defun time-adjust (time start end)
   "Replace time string by time_adjust.py"
   (interactive "nTime(ms): \nr")
@@ -37,17 +49,6 @@
    (point-min) (point-max)
    "scss_preprocessor.py" nil buffer t
    (format "%s.css" (file-name-sans-extension (buffer-file-name)))))
-
-(defun parentheses-normalize (start end)
-  "Replace multibyte parentheses to ascii parentheses"
-  (interactive "r")
-  (replace-string "（" " (" nil start end)
-  (replace-string "）" ") " nil start end))
-
-(defun rebuf ()
-  "`revert-buffer` with no confirmation"
-  (interactive)
-  (revert-buffer t t))
 
 ;; 
 ;; Advices
