@@ -1,4 +1,4 @@
-export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
+export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
 export PS2="\[\033[33m\]>\[\e[00m\] "
 export TERM="xterm-256color"
