@@ -35,6 +35,10 @@
   (interactive)
   (revert-buffer t t))
 
+(defun fill-region-with-fold-by-comma (start end)
+  (interactive "r")
+  (shell-command-on-region
+   start end (format "fold-by-comma %d" fill-column) t))
 
 (defun time-adjust (time start end)
   "Replace time string by time_adjust.py"
