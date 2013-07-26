@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import sys, os
-dirpath = os.path.dirname(os.path.abspath(__file__))
-parpath = os.path.join(dirpath, os.pardir)
-sys.path.append(parpath)
-
-
 import unittest
-import scss_preprocessor as app
+import append_path
+from scss_preprocessor import *
 
 
 class ScssPreprocessorTest(unittest.TestCase):
@@ -23,7 +18,7 @@ class ScssPreprocessorTest(unittest.TestCase):
         a_arg = ("selector {"
                  "box-sizing: border-box;"
                  "}")
-        a = app.addPrefixes(a_arg, 'box-sizing')
+        a = addPrefixes(a_arg, 'box-sizing')
         self.assertEqual(e, a)
 
     def test_replaceRem_1(self):
@@ -33,7 +28,7 @@ class ScssPreprocessorTest(unittest.TestCase):
         a_arg = ("selector {"
                  "font: 2rem/3rem sans-serif;"
                  "}")
-        a = app.replaceRem(a_arg)
+        a = replaceRem(a_arg)
         self.assertEqual(e, a)
 
     def test_replaceRem_2(self):
@@ -43,7 +38,7 @@ class ScssPreprocessorTest(unittest.TestCase):
         a_arg = ("selector {"
                  "font: 2rem/3em sans-serif;"
                  "}")
-        a = app.replaceRem(a_arg)
+        a = replaceRem(a_arg)
         self.assertEqual(e, a)
 
     def test_replaceRem_3(self):
@@ -53,7 +48,7 @@ class ScssPreprocessorTest(unittest.TestCase):
         a_arg = ("selector {"
                  "font: 2em/3rem sans-serif;"
                  "}")
-        a = app.replaceRem(a_arg)
+        a = replaceRem(a_arg)
         self.assertEqual(e, a)
 
 if __name__ == "__main__":
