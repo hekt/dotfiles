@@ -1,9 +1,12 @@
+{-# OPTIONS -Wall -Werror #-}
+
 import System.Environment (getArgs)
 import Data.Function (on)
 import Data.List (elemIndex, minimumBy)
 import Data.Maybe (fromJust, isJust)
 import Data.String.Utils (join, split, strip)
 
+main :: IO ()
 main = do
   args <- getArgs
   stdin <- getContents
@@ -16,10 +19,10 @@ main = do
 -- >>> main' "    foo, bar, baz, qux, quux" 20
 -- "    foo, bar, baz,\n    qux, quux"
 main' :: String -> Int -> String
-main' s n = before ++ formatting (separateWords words $ n - offset) offset
+main' s n = before ++ formatting (separateWords ws $ n - offset) offset
     where offset = maybe (indentWidth s) (+ 1) $ fstIndex ['[', '{'] s
           (before, body) = splitAt offset s
-          words = map strip $ split "," body
+          ws = map strip $ split "," body
 
 -- |
 -- >>> fstIndex [5,3] [1,2,3,4,5]
@@ -41,7 +44,7 @@ indentWidth = length . takeWhile (== ' ')
 -- >>> separateWords ["foo", "bar", "baz", "qux", "quux"] 10
 -- [["foo","bar"],["baz","qux"],["quux"]]
 separateWords :: [String] -> Int -> [[String]]
-separateWords words maxWidth = separateWords' words maxWidth 0 []
+separateWords ws maxWidth = separateWords' ws maxWidth 0 []
 
 separateWords' :: [String] -> Int -> Int -> [String] -> [[String]]
 separateWords' [] _ _ tmp = tmp: []
