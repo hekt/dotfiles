@@ -3,7 +3,9 @@
 
 """append parent directory path"""
 
-import sys, os
+import sys
+import os
+
 dirpath = os.path.dirname(os.path.abspath(__file__))
 parpath = os.path.join(dirpath, os.pardir)
 sys.path.append(parpath)
