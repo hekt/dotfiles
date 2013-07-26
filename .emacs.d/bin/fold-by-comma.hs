@@ -1,5 +1,8 @@
 import System.Environment (getArgs)
-import Data.List
+import Data.Function (on)
+import Data.List (elemIndex, minimumBy)
+import Data.Maybe (fromJust, isJust)
+import Data.String.Utils (join, split, strip)
 
 main = do
   args <- getArgs
@@ -10,89 +13,43 @@ main = do
 -- |
 -- >>> main' "    [foo, bar, baz, qux, quux]" 20
 -- "    [foo, bar, baz,\n     qux, quux]"
+-- >>> main' "    foo, bar, baz, qux, quux" 20
+-- "    foo, bar, baz,\n    qux, quux"
 main' :: String -> Int -> String
 main' s n = before ++ formatting (separateWords words $ n - offset) offset
-    where i = maybe (getOffset s) (+ 1) $ elemIndex' ['[', '{'] s
-          (before, body) = splitAt i s
-          offset = length before
-          words = map strip $ splitBy ',' body
+    where offset = maybe (indentWidth s) (+ 1) $ fstIndex ['[', '{'] s
+          (before, body) = splitAt offset s
+          words = map strip $ split "," body
 
 -- |
--- >>> elemIndex' ['g','b'] "abcdefg"
--- Just 1
--- >>> elemIndex' ['h'] "abcdefg"
+-- >>> fstIndex [5,3] [1,2,3,4,5]
+-- Just 2
+-- >>> fstIndex [6,7,8] [1,2,3,4,5]
 -- Nothing
-elemIndex' :: (Eq a) => [a] -> [a] -> Maybe Int
-elemIndex' xs ys = elemIndex'' xs ys 0
-
-elemIndex'' :: (Eq a) => [a] -> [a] -> Int -> Maybe Int
-elemIndex'' _ [] i = Nothing
-elemIndex'' xs (y:ys) i
-    | y `elem` xs = Just i
-    | otherwise = elemIndex'' xs ys (i+1)
+fstIndex :: (Eq a) => [a] -> [a] -> Maybe Int
+fstIndex xs ys = case filter isJust $ map (flip elemIndex ys) xs of
+                   []  -> Nothing
+                   xs' -> minimumBy (compare `on` fromJust) xs'
 
 -- |
--- >>> splitBy '/' "foo/bar/baz"
--- ["foo","bar","baz"]
-splitBy :: Char -> String -> [String]
-splitBy _ [] = []
-splitBy c cs = xs: splitBy c ys
-    where (xs, ys) = splitBy' c cs
-
-splitBy' :: Char -> String -> (String, String)
-splitBy' c cs = (xs , ys)
-    where xs = takeWhile (/= c) cs
-          ys = let ys_ = dropWhile (/= c) cs
-               in if null ys_ then [] else tail ys_
-
--- |
--- >>> lstrip "   \nfoo"
--- "foo"
-lstrip :: String -> String
-lstrip = dropWhile (flip elem [' ', '\n'])
-
--- |
--- >>> rstrip "bar   \n"
--- "bar"
-rstrip :: String -> String
-rstrip = reverse . dropWhile (flip elem [' ', '\n']) . reverse
-
--- |
--- >>> strip "\n baz \n"
--- "baz"
-strip :: String -> String
-strip = rstrip . lstrip
-
--- |
--- >>> join " / " ["foo", "bar", "baz"]
--- "foo / bar / baz"
-join :: [a] -> [[a]] -> [a]
-join _ [] = []
-join _ [x] = x
-join d (x:xs) = x ++ d ++ join d xs
-
--- |
--- >>> getOffset "    foo"
+-- >>> indentWidth "    foo"
 -- 4
-getOffset :: String -> Int
-getOffset = length . takeWhile (== ' ')
-
+indentWidth :: String -> Int
+indentWidth = length . takeWhile (== ' ')
 
 -- |
 -- >>> separateWords ["foo", "bar", "baz", "qux", "quux"] 10
 -- [["foo","bar"],["baz","qux"],["quux"]]
 separateWords :: [String] -> Int -> [[String]]
-separateWords [] _ = []
-separateWords words maxWidth = l: separateWords ws maxWidth
-    where (l, ws) = separateWords' words maxWidth 0 []
+separateWords words maxWidth = separateWords' words maxWidth 0 []
 
-separateWords' :: [String] -> Int -> Int -> [String] -> ([String], [String])
-separateWords' [] _ _ tmp = (tmp, [])
+separateWords' :: [String] -> Int -> Int -> [String] -> [[String]]
+separateWords' [] _ _ tmp = tmp: []
 separateWords' wws@(w:ws) maxWidth currentWidth tmp
     | currentWidth == 0 && wordLength > maxWidth
-                           = ([w], ws)
+                           = [w]: separateWords' ws maxWidth 0 []
     | newWidth <= maxWidth = separateWords' ws maxWidth newWidth (tmp ++ [w])
-    | otherwise            = (tmp, wws)
+    | otherwise            = tmp: separateWords' wws maxWidth 0 []
     where wordLength = length w +  2
           newWidth = wordLength + currentWidth
 
