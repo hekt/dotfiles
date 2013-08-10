@@ -8,9 +8,8 @@ import Data.String.Utils (join, split, strip)
 
 main :: IO ()
 main = do
-  args <- getArgs
+  maxWidth <- fmap (read . head) getArgs
   stdin <- getContents
-  let maxWidth = read $ head args
   putStr $ main' stdin maxWidth
          
 -- |
@@ -44,17 +43,21 @@ indentWidth = length . takeWhile (== ' ')
 -- >>> separateWords ["foo", "bar", "baz", "qux", "quux"] 10
 -- [["foo","bar"],["baz","qux"],["quux"]]
 separateWords :: [String] -> Int -> [[String]]
-separateWords ws maxWidth = separateWords' ws maxWidth 0 []
+separateWords [] _ = []
+separateWords ws maxWidth = let (xs, ys) = separateWords' ws maxWidth
+                            in xs: separateWords ys maxWidth
 
-separateWords' :: [String] -> Int -> Int -> [String] -> [[String]]
-separateWords' [] _ _ tmp = tmp: []
-separateWords' wws@(w:ws) maxWidth currentWidth tmp
-    | currentWidth == 0 && wordLength > maxWidth
-                           = [w]: separateWords' ws maxWidth 0 []
-    | newWidth <= maxWidth = separateWords' ws maxWidth newWidth (tmp ++ [w])
-    | otherwise            = tmp: separateWords' wws maxWidth 0 []
-    where wordLength = length w +  2
-          newWidth = wordLength + currentWidth
+-- |
+-- >>> separateWords' ["foo", "bar", "baz", "qux", "quux"] 10
+-- (["foo","bar"],["baz","qux","quux"])
+separateWords' :: [String] -> Int -> ([String], [String])
+separateWords' [] _ = ([], [])
+separateWords' wws@(w:ws) n
+    | n' < 0    = ([], wws)
+    | otherwise = let (xs, ys) = separateWords' ws n'
+                  in (w:xs, ys)
+    where n' = n - (length w + 2)
+
 
 -- |
 -- >>> formatting [["foo", "bar"], ["baz", "qux"], ["quux"]] 4
