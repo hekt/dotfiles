@@ -12,6 +12,8 @@ export HISTSIZE=2000
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make"
+alias notice="terminal-notifier -message \"success\" || terminal-notifier -message \"failure\""
+function ehgm() { command ehgm.pl $@ && notice ; }
 
 # Basic commands with options
 alias ls="ls -alpvG"
