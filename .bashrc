@@ -14,7 +14,9 @@ alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make"
 alias notice="terminal-notifier -message \"success\" || terminal-notifier -message \"failure\""
 function ehgm() { command ehgm.pl $@ && notice ; }
-function timer() { command perl timer.pl --scale=1 --time=$(($@*60)) && terminal-notifier -message "timer done" }
+function timer() { 
+    command perl timer.pl --scale=1 --time=$(($@*60)) && terminal-notifier -message "timer done"
+}
 
 # Basic commands with options
 alias ls="ls -alpvG"
