@@ -12,10 +12,22 @@ export HISTSIZE=2000
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make"
-alias notice="terminal-notifier -message \"success\" || terminal-notifier -message \"failure\""
-function ehgm() { command ehgm.pl $@ && notice ; }
-function timer() { 
-    command perl timer.pl --scale=1 --time=$(($@*60)) && terminal-notifier -message "timer done"
+
+# functions
+function notice() {
+    local title="Terminal"
+    local message="done"
+    local error_message="error"
+    if [ !$0 = "" ]; then title=$0; fi
+    if [ !$1 = "" ]; then message=$1; fi
+    if [ !$2 = "" ]; then error_message=$2; fi
+    command echo "display notification \"$message\" with title \"$title\"" | osascript || echo "display notification \"$error_message\" with title \"$title\"" | osascript
+}
+function ehgm() {
+    command ehgm.pl $@ && notice "ehgm"
+}
+function timer() {
+    command perl ~/bin/timer.pl --color=green --scale=1 --time=$(($@*60)) && notice "Timer"
 }
 
 # Basic commands with options
