@@ -9,3 +9,5 @@
     excludesfile = ~/.gitignore.global
 [color]
     ui = true
+[url "git@github.com:"]
+	pushInsteadOf = git://github.com/
