@@ -11,7 +11,7 @@ export HISTSIZE=2000
 # Aliases
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
-alias ghcm="ghc --make"
+alias ghcm="ghc --make -O"
 
 # functions
 function notice() {
