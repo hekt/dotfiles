@@ -4,8 +4,8 @@
 
 
 ;;;### (autoloads (toggle-auto-compile auto-compile-on-save-mode
-;;;;;;  auto-compile-mode) "auto-compile" "auto-compile.el" (20975
-;;;;;;  44173 0 0))
+;;;;;;  auto-compile-mode) "auto-compile" "auto-compile.el" (21124
+;;;;;;  54544 0 0))
 ;;; Generated autoloads from auto-compile.el
 
 (autoload 'auto-compile-mode "auto-compile" "\
@@ -96,7 +96,7 @@ multiple files is toggled as follows:
 
 ;;;***
 
-;;;### (autoloads nil nil ("auto-compile-pkg.el") (20975 44173 417298
+;;;### (autoloads nil nil ("auto-compile-pkg.el") (21124 54544 30435
 ;;;;;;  0))
 
 ;;;***

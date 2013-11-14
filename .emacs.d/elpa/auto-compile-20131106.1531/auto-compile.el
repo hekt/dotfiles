@@ -1,11 +1,10 @@
 ;;; auto-compile.el --- automatically compile Emacs Lisp libraries
+;; Version: 20131106.1531
 
 ;; Copyright (C) 2008-2013  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20080830
-;; Version: 20130701.215
-;; X-Original-Version: 1.0.12
 ;; Status: beta
 ;; Package-Requires: ((cl-lib "0.2") (packed "0.3.4"))
 ;; Homepage: http://tarsius.github.com/auto-compile
@@ -186,7 +185,7 @@ of variable `auto-compile-mark-failed-modified' is non-nil."
   :group 'auto-compile
   :type 'boolean)
 
-(defcustom auto-compile-mark-failed-modified t
+(defcustom auto-compile-mark-failed-modified nil
   "Whether to mark buffers which failed to compile as modified.
 
 This serves as a reminder to fix fatal errors.  While useful this

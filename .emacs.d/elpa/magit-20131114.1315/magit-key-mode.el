@@ -69,7 +69,7 @@
   :group 'magit-faces)
 
 ;;; Keygroups
-
+;;;###autoload
 (defvar magit-key-mode-groups
   '((dispatch
      (actions
@@ -216,7 +216,12 @@
     (committing
      (man-page "git-commit")
      (actions
-      ("c" "Commit" magit-commit))
+      ("c" "Commit" magit-commit)
+      ("a" "Amend"  magit-commit-amend)
+      ("e" "Extend" magit-commit-extend)
+      ("r" "Reword" magit-commit-reword)
+      ("f" "Fixup"  magit-commit-fixup)
+      ("s" "Squash" magit-commit-squash))
      (switches
       ("-r" "Replace the tip of current branch" "--amend")
       ("-R" "Claim authorship and reset author date" "--reset-author")
@@ -279,11 +284,9 @@
       ("b" "Bad" magit-bisect-bad)
       ("g" "Good" magit-bisect-good)
       ("k" "Skip" magit-bisect-skip)
-      ("l" "Log" magit-bisect-log)
       ("r" "Reset" magit-bisect-reset)
       ("s" "Start" magit-bisect-start)
-      ("u" "Run" magit-bisect-run)
-      ("v" "Visualize" magit-bisect-visualize)))
+      ("u" "Run" magit-bisect-run)))
 
     (diff-options
      (actions
@@ -710,6 +713,8 @@ Return the point before the actions part, if any, nil otherwise."
 (mapc (lambda (g)
         (magit-key-mode-generate (car g)))
       magit-key-mode-groups)
+
+;;;###autoload (mapc (lambda (g) (eval `(autoload ',(intern (concat "magit-key-mode-popup-" (symbol-name (car g)))) "magit-key-mode" ,(concat "Key menu for " (symbol-name (car g))) t))) magit-key-mode-groups)
 
 (provide 'magit-key-mode)
 ;;; magit-key-mode.el ends here

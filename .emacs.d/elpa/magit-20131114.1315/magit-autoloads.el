@@ -10,16 +10,20 @@
 ;;;;;;  magit-diff-staged magit-diff-working-tree magit-diff magit-save-index
 ;;;;;;  magit-cherry magit-reflog-head magit-reflog magit-file-log
 ;;;;;;  magit-log-long-ranged magit-log-long magit-log-ranged magit-log
-;;;;;;  magit-submodule-sync magit-submodule-init magit-submodule-update-init
-;;;;;;  magit-submodule-update magit-stash-snapshot magit-stash magit-delete-tag
-;;;;;;  magit-tag magit-commit magit-push magit-push-tags magit-git-command
-;;;;;;  magit-shell-command magit-pull magit-remote-update magit-fetch-current
-;;;;;;  magit-fetch magit-reset-working-tree magit-reset-head-hard
-;;;;;;  magit-reset-head magit-interactive-rebase magit-rename-remote
-;;;;;;  magit-remove-remote magit-add-remote magit-rename-branch
-;;;;;;  magit-delete-branch magit-create-branch magit-checkout magit-unstage-all
-;;;;;;  magit-stage-all magit-merge-abort magit-merge magit-status
-;;;;;;  magit-show-commit) "magit" "magit.el" (21110 6421 0 0))
+;;;;;;  magit-bisect-run magit-bisect-skip magit-bisect-bad magit-bisect-good
+;;;;;;  magit-bisect-reset magit-bisect-start magit-submodule-sync
+;;;;;;  magit-submodule-init magit-submodule-update-init magit-submodule-update
+;;;;;;  magit-stash-snapshot magit-stash magit-delete-tag magit-tag
+;;;;;;  magit-commit-squash magit-commit-fixup magit-commit-reword
+;;;;;;  magit-commit-extend magit-commit-amend magit-commit magit-push
+;;;;;;  magit-push-tags magit-git-command magit-shell-command magit-pull
+;;;;;;  magit-remote-update magit-fetch-current magit-fetch magit-reset-working-tree
+;;;;;;  magit-reset-head-hard magit-reset-head magit-interactive-rebase
+;;;;;;  magit-rename-remote magit-remove-remote magit-add-remote
+;;;;;;  magit-rename-branch magit-delete-branch magit-create-branch
+;;;;;;  magit-checkout magit-unstage-all magit-stage-all magit-merge-abort
+;;;;;;  magit-merge magit-status magit-show-commit) "magit" "magit.el"
+;;;;;;  (21124 54537 0 0))
 ;;; Generated autoloads from magit.el
 
 (autoload 'magit-show-commit "magit" "\
@@ -235,6 +239,53 @@ With a prefix argument amend to the commit at HEAD instead.
 
 \(fn &optional AMENDP)" t nil)
 
+(autoload 'magit-commit-amend "magit" "\
+Amend the last commit.
+\('git commit --amend').
+
+\(fn)" t nil)
+
+(autoload 'magit-commit-extend "magit" "\
+Amend the last commit, without editing the message.
+With a prefix argument do change the committer date, otherwise
+don't.  The option `magit-commit-extend-override-date' can be
+used to inverse the meaning of the prefix argument.
+\('git commit --no-edit --amend [--keep-date]').
+
+\(fn &optional OVERRIDE-DATE)" t nil)
+
+(autoload 'magit-commit-reword "magit" "\
+Reword the last commit, ignoring staged changes.
+
+With a prefix argument do change the committer date, otherwise
+don't.  The option `magit-commit-rewrite-override-date' can be
+used to inverse the meaning of the prefix argument.
+
+Non-interactively respect the optional OVERRIDE-DATE argument
+and ignore the option.
+
+\('git commit --only --amend').
+
+\(fn &optional OVERRIDE-DATE)" t nil)
+
+(autoload 'magit-commit-fixup "magit" "\
+Create a fixup commit.
+With a prefix argument the user is always queried for the commit
+to be fixed.  Otherwise the current or marked commit may be used
+depending on the value of option `magit-commit-squash-commit'.
+\('git commit [--no-edit] --fixup=COMMIT').
+
+\(fn &optional COMMIT)" t nil)
+
+(autoload 'magit-commit-squash "magit" "\
+Create a squash commit.
+With a prefix argument the user is always queried for the commit
+to be fixed.  Otherwise the current or marked commit may be used
+depending on the value of option `magit-commit-squash-commit'.
+\('git commit [--no-edit] --fixup=COMMIT').
+
+\(fn &optional COMMIT FIXUP)" t nil)
+
 (autoload 'magit-tag "magit" "\
 Create a new tag with the given NAME at REV.
 With a prefix argument annotate the tag.
@@ -282,6 +333,36 @@ Initialize the submodules.
 Synchronizes submodule's remote URL configuration.
 
 \(fn)" t nil)
+
+(autoload 'magit-bisect-start "magit" "\
+
+
+\(fn BAD GOOD)" t nil)
+
+(autoload 'magit-bisect-reset "magit" "\
+
+
+\(fn)" t nil)
+
+(autoload 'magit-bisect-good "magit" "\
+
+
+\(fn)" t nil)
+
+(autoload 'magit-bisect-bad "magit" "\
+
+
+\(fn)" t nil)
+
+(autoload 'magit-bisect-skip "magit" "\
+
+
+\(fn)" t nil)
+
+(autoload 'magit-bisect-run "magit" "\
+Bisect automatically by running commands after each step.
+
+\(fn CMDLINE)" t nil)
 
 (autoload 'magit-log "magit" "\
 
@@ -426,56 +507,8 @@ Run `gitk --all' for the current git repository.
 
 ;;;***
 
-;;;### (autoloads (magit-bisect-run magit-bisect-visualize magit-bisect-log
-;;;;;;  magit-bisect-skip magit-bisect-bad magit-bisect-good magit-bisect-reset
-;;;;;;  magit-bisect-start) "magit-bisect" "magit-bisect.el" (21110
-;;;;;;  6421 0 0))
-;;; Generated autoloads from magit-bisect.el
-
-(autoload 'magit-bisect-start "magit-bisect" "\
-Start a bisect session.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-reset "magit-bisect" "\
-Quit a bisect session.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-good "magit-bisect" "\
-Tell git that the current revision is good during a bisect session.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-bad "magit-bisect" "\
-Tell git that the current revision is bad during a bisect session.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-skip "magit-bisect" "\
-Tell git to skip the current revision during a bisect session.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-log "magit-bisect" "\
-Show the bisect log.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-visualize "magit-bisect" "\
-Show the remaining suspects with gitk.
-
-\(fn)" t nil)
-
-(autoload 'magit-bisect-run "magit-bisect" "\
-Bisect automatically by running commands after each step.
-
-\(fn COMMAND)" t nil)
-
-;;;***
-
 ;;;### (autoloads (magit-blame-mode) "magit-blame" "magit-blame.el"
-;;;;;;  (21110 6421 0 0))
+;;;;;;  (21124 54537 0 0))
 ;;; Generated autoloads from magit-blame.el
 
 (autoload 'magit-blame-mode "magit-blame" "\
@@ -485,8 +518,20 @@ Display blame information inline.
 
 ;;;***
 
+;;;### (autoloads nil "magit-key-mode" "magit-key-mode.el" (21124
+;;;;;;  54537 0 0))
+;;; Generated autoloads from magit-key-mode.el
+
+(defvar magit-key-mode-groups '((dispatch (actions ("b" "Branching" magit-key-mode-popup-branching) ("B" "Bisecting" magit-key-mode-popup-bisecting) ("c" "Committing" magit-key-mode-popup-committing) ("d" "Diff worktree" magit-diff-working-tree) ("D" "Diff" magit-diff) ("f" "Fetching" magit-key-mode-popup-fetching) ("F" "Pulling" magit-key-mode-popup-pulling) ("g" "Refresh Buffers" magit-refresh-all) ("l" "Logging" magit-key-mode-popup-logging) ("m" "Merging" magit-key-mode-popup-merging) ("M" "Remoting" magit-key-mode-popup-remoting) ("P" "Pushing" magit-key-mode-popup-pushing) ("o" "Submoduling" magit-key-mode-popup-submodule) ("r" "Rewriting" magit-key-mode-popup-rewriting) ("s" "Show Status" magit-status) ("S" "Stage all" magit-stage-all) ("t" "Tagging" magit-key-mode-popup-tagging) ("U" "Unstage all" magit-unstage-all) ("v" "Show Commit" magit-show-commit) ("V" "Show File" magit-show) ("w" "Wazzup" magit-wazzup) ("X" "Reset worktree" magit-reset-working-tree) ("y" "Cherry" magit-cherry) ("z" "Stashing" magit-key-mode-popup-stashing) ("!" "Running" magit-key-mode-popup-running) ("$" "Show Process" magit-display-process))) (logging (man-page "git-log") (actions ("l" "Short" magit-log) ("L" "Long" magit-log-long) ("h" "Head Reflog" magit-reflog-head) ("f" "File log" magit-file-log) ("rl" "Ranged short" magit-log-ranged) ("rL" "Ranged long" magit-log-long-ranged) ("rh" "Reflog" magit-reflog)) (switches ("-m" "Only merge commits" "--merges") ("-do" "Date Order" "--date-order") ("-f" "First parent" "--first-parent") ("-i" "Case insensitive patterns" "-i") ("-pr" "Pickaxe regex" "--pickaxe-regex") ("-g" "Show Graph" "--graph") ("-n" "Name only" "--name-only") ("-am" "All match" "--all-match") ("-al" "All" "--all")) (arguments ("=r" "Relative" "--relative=" read-directory-name) ("=c" "Committer" "--committer=" read-from-minibuffer) ("=>" "Since" "--since=" read-from-minibuffer) ("=<" "Before" "--before=" read-from-minibuffer) ("=a" "Author" "--author=" read-from-minibuffer) ("=g" "Grep messages" "--grep=" read-from-minibuffer) ("=G" "Grep patches" "-G" read-from-minibuffer) ("=s" "Pickaxe search" "-S" read-from-minibuffer) ("=b" "Branches" "--branches=" read-from-minibuffer) ("=R" "Remotes" "--remotes=" read-from-minibuffer))) (running (actions ("!" "Command from root" magit-shell-command) (":" "Git command" magit-git-command) ("g" "git gui" magit-run-git-gui) ("k" "gitk" magit-run-gitk))) (fetching (man-page "git-fetch") (actions ("f" "Current" magit-fetch-current) ("a" "All" magit-remote-update) ("o" "Other" magit-fetch)) (switches ("-p" "Prune" "--prune"))) (pushing (man-page "git-push") (actions ("P" "Push" magit-push) ("t" "Push tags" magit-push-tags)) (switches ("-f" "Force" "--force") ("-d" "Dry run" "-n") ("-u" "Set upstream" "-u"))) (pulling (man-page "git-pull") (actions ("F" "Pull" magit-pull)) (switches ("-f" "Force" "--force") ("-r" "Rebase" "--rebase"))) (branching (man-page "git-branch") (actions ("v" "Branch manager" magit-branch-manager) ("b" "Checkout" magit-checkout) ("c" "Create" magit-create-branch) ("r" "Rename" magit-rename-branch) ("k" "Delete" magit-delete-branch)) (switches ("-t" "Set upstream configuration" "--track") ("-m" "Merged to HEAD" "--merged") ("-M" "Merged to master" "--merged=master") ("-n" "Not merged to HEAD" "--no-merged") ("-N" "Not merged to master" "--no-merged=master")) (arguments ("=c" "Contains" "--contains=" magit-read-rev-with-default) ("=m" "Merged" "--merged=" magit-read-rev-with-default) ("=n" "Not merged" "--no-merged=" magit-read-rev-with-default))) (remoting (man-page "git-remote") (actions ("v" "Remote manager" magit-branch-manager) ("a" "Add" magit-add-remote) ("r" "Rename" magit-rename-remote) ("k" "Remove" magit-remove-remote))) (tagging (man-page "git-tag") (actions ("t" "Create" magit-tag) ("k" "Delete" magit-delete-tag)) (switches ("-a" "Annotate" "--annotate") ("-f" "Force" "--force") ("-s" "Sign" "--sign"))) (stashing (man-page "git-stash") (actions ("z" "Save" magit-stash) ("s" "Snapshot" magit-stash-snapshot)) (switches ("-k" "Keep index" "--keep-index") ("-u" "Include untracked files" "--include-untracked") ("-a" "Include all files" "--all"))) (committing (man-page "git-commit") (actions ("c" "Commit" magit-commit) ("a" "Amend" magit-commit-amend) ("e" "Extend" magit-commit-extend) ("r" "Reword" magit-commit-reword) ("f" "Fixup" magit-commit-fixup) ("s" "Squash" magit-commit-squash)) (switches ("-r" "Replace the tip of current branch" "--amend") ("-R" "Claim authorship and reset author date" "--reset-author") ("-a" "Stage all modified and deleted files" "--all") ("-e" "Allow empty commit" "--allow-empty") ("-v" "Show diff of changes to be committed" "--verbose") ("-n" "Bypass git hooks" "--no-verify") ("-s" "Add Signed-off-by line" "--signoff") ("-S" "Sign using gpg" "--gpg-sign"))) (merging (man-page "git-merge") (actions ("m" "Merge" magit-merge) ("A" "Abort" magit-merge-abort)) (switches ("-ff" "Fast-forward only" "--ff-only") ("-nf" "No fast-forward" "--no-ff") ("-sq" "Squash" "--squash")) (arguments ("-st" "Strategy" "--strategy=" read-from-minibuffer))) (rewriting (actions ("b" "Begin" magit-rewrite-start) ("s" "Stop" magit-rewrite-stop) ("a" "Abort" magit-rewrite-abort) ("f" "Finish" magit-rewrite-finish) ("*" "Set unused" magit-rewrite-set-unused) ("." "Set used" magit-rewrite-set-used))) (apply-mailbox (man-page "git-am") (actions ("J" "Apply Mailbox" magit-apply-mailbox)) (switches ("-s" "add a Signed-off-by line to the commit message" "--signoff") ("-3" "allow fall back on 3way merging if needed" "--3way") ("-k" "pass -k flag to git-mailinfo" "--keep") ("-c" "strip everything before a scissors line" "--scissors") ("-p" "pass it through git-apply" "-p") ("-r" "override error message when patch failure occurs" "--resolvemsg") ("-d" "lie about committer date" "--committer-date-is-author-date") ("-D" "use current timestamp for author date" "--ignore-date") ("-b" "pass -b flag to git-mailinfo" "--keep-non-patch")) (arguments ("=p" "format the patch(es) are in" "--patch-format"))) (submodule (man-page "git-submodule") (actions ("u" "Update" magit-submodule-update) ("b" "Both update and init" magit-submodule-update-init) ("i" "Init" magit-submodule-init) ("s" "Sync" magit-submodule-sync))) (bisecting (man-page "git-bisect") (actions ("b" "Bad" magit-bisect-bad) ("g" "Good" magit-bisect-good) ("k" "Skip" magit-bisect-skip) ("r" "Reset" magit-bisect-reset) ("s" "Start" magit-bisect-start) ("u" "Run" magit-bisect-run))) (diff-options (actions ("s" "Set" magit-set-diff-options) ("d" "Set default" magit-set-default-diff-options) ("c" "Save default" magit-save-default-diff-options) ("r" "Reset to default" magit-reset-diff-options) ("h" "Toggle Hunk Refinement" magit-toggle-diff-refine-hunk)) (switches ("-m" "Show smallest possible diff" "--minimal") ("-p" "Use patience diff algorithm" "--patience") ("-h" "Use histogram diff algorithm" "--histogram") ("-b" "Ignore whitespace changes" "--ignore-space-change") ("-w" "Ignore all whitespace" "--ignore-all-space") ("-W" "Show surrounding functions" "--function-context")))) "\
+Holds the key, help, function mapping for the log-mode.
+If you modify this make sure you reset `magit-key-mode-keymaps'
+to nil.")
+ (mapc (lambda (g) (eval `(autoload ',(intern (concat "magit-key-mode-popup-" (symbol-name (car g)))) "magit-key-mode" ,(concat "Key menu for " (symbol-name (car g))) t))) magit-key-mode-groups)
+
+;;;***
+
 ;;;### (autoloads (global-magit-wip-save-mode magit-wip-save-mode)
-;;;;;;  "magit-wip" "magit-wip.el" (21110 6421 0 0))
+;;;;;;  "magit-wip" "magit-wip.el" (21124 54537 0 0))
 ;;; Generated autoloads from magit-wip.el
 
 (autoload 'magit-wip-save-mode "magit-wip" "\
@@ -521,8 +566,7 @@ See `magit-wip-save-mode' for more information on Magit-Wip-Save mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("magit-key-mode.el" "magit-pkg.el") (21110
-;;;;;;  6421 340715 0))
+;;;### (autoloads nil nil ("magit-pkg.el") (21124 54537 229505 0))
 
 ;;;***
 
