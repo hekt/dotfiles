@@ -6,4 +6,5 @@
 (setq-default js2-global-externs 
               '("FileReader" "jQuery" "$" "setTimeout" "clearTimeout"
                 "setInterval" "clearInterval" "location" "console" "JSON"
-                "chrome"))
+                "chrome" "localStorage" "sessionStorage" "history"
+                "navigator"))

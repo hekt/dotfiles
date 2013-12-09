@@ -1,5 +1,9 @@
 ;; appearance
 
+;; linum
+(global-linum-mode t)
+(setq linum-format "%3d ")
+
 ;; modeline
 (setq-default
  mode-line-format

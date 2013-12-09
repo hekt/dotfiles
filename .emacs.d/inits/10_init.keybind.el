@@ -25,3 +25,6 @@
 (define-key global-map (kbd "C-c n") 'windmove-down) 
 (define-key global-map (kbd "C-c b") 'windmove-left) 
 (define-key global-map (kbd "C-c f") 'windmove-right)
+
+;; compile
+(define-key global-map (kbd "C-c c") 'compile)
