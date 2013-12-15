@@ -12,6 +12,7 @@
 
 ;; tramp
 (require 'tramp)
+(setq tramp-terminal-type "dump")
 (setq tramp-default-method "ssh")
 (add-to-list 'tramp-default-proxies-alist
              '(nil "\\`root\\'" "/ssh:%h:"))
