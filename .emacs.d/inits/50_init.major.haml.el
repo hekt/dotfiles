@@ -7,7 +7,7 @@
   (let ((from buffer-file-name)
         (to (replace-regexp-in-string "\.haml" ".html" buffer-file-name)))
     (call-process
-     "haml" nil buffer t from to)))
+     "haml" nil buffer t "--double-quote-attributes" from to)))
 
 (defun haml-mode-compile-function ()
   (let* ((name "*Haml Compile-Log*")
