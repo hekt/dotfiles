@@ -4,10 +4,10 @@
 
 (defun compile-haml (buffer)
   (interactive)
-  (let ((from buffer-file-name)
-        (to (replace-regexp-in-string "\.haml" ".html" buffer-file-name)))
-    (call-process
-     "haml" nil buffer t "--double-quote-attributes" from to)))
+  (let ((output (replace-regexp-in-string "\.haml" ".html" buffer-file-name)))
+    (call-process-region
+     (point-min) (point-max)
+     "haml" nil buffer t "--double-quote-attributes" "--stdin" output)))
 
 (defun haml-mode-compile-function ()
   (let* ((name "*Haml Compile-Log*")
