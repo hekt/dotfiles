@@ -22,6 +22,9 @@
 ;; backup
 (setq make-backup-files nil)
 
+;; autosave
+(setq auto-save-default nil)
+
 ;; sound
 (setq ring-bell-function 'ignore)
 
