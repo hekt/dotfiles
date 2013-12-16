@@ -17,8 +17,3 @@
 
 # venv
 venv/
-
-# SASS
-*.sass
-*.scss
-*.styl
