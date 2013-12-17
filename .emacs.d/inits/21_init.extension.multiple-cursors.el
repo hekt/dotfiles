@@ -1,0 +1,13 @@
+(require 'multiple-cursors)
+
+(global-set-key (kbd "C-M-c") 'mc/edit-lines)
+(global-set-key (kbd "C-M-r") 'mc/mark-all-in-region)
+(global-set-key (kbd "C-q C-q") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-q C-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-q C-p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-q m") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "C-q u") 'mc/unmark-next-like-this)
+(global-set-key (kbd "C-q U") 'mc/unmark-previous-like-this)
+(global-set-key (kbd "C-q s") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-q S") 'mc/skip-to-previous-like-this)
+(global-set-key (kbd "C-q a") 'mc/mark-all-like-this-dwim)
