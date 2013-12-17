@@ -8,10 +8,14 @@
 ;; global-map
 ;; 
 
-(define-key global-map (kbd "C-h") 'delete-backward-char)
-(define-key global-map (kbd "C-c r") 'replace-string)
-(define-key global-map (kbd "C-c M-r") 'replace-regexp)
-(define-key global-map (kbd "M-g") 'fill-region-with-fold-by-comma)
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-c r") 'replace-string)
+(global-set-key (kbd "C-c M-r") 'replace-regexp)
+(global-set-key (kbd "M-g") 'fill-region-with-fold-by-comma)
+
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-q"))
+(global-set-key (kbd "C-z C-q") 'quoted-insert)
 
 ;; auto complete ( { [ "
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
@@ -21,10 +25,10 @@
 (setq skeleton-pair 1)
 
 ;; windmove
-(define-key global-map (kbd "C-c p") 'windmove-up)
-(define-key global-map (kbd "C-c n") 'windmove-down) 
-(define-key global-map (kbd "C-c b") 'windmove-left) 
-(define-key global-map (kbd "C-c f") 'windmove-right)
+(global-set-key (kbd "C-c p") 'windmove-up)
+(global-set-key (kbd "C-c n") 'windmove-down) 
+(global-set-key (kbd "C-c b") 'windmove-left) 
+(global-set-key (kbd "C-c f") 'windmove-right)
 
 ;; compile
-(define-key global-map (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c c") 'compile)
