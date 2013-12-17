@@ -6,6 +6,7 @@
 .emacs.desktop
 tramp
 auto-save-list/
+elpa/*
 url/cookies
 elpa/archives
 ac-comphist.dat
