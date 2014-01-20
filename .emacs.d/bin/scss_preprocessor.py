@@ -53,7 +53,7 @@ def doAll(s):
 
 
 def compileScss(outputName, outputContent):
-    ps = Popen(("sass", "--scss", "--stdin", outputName),
+    ps = Popen(("sass", "--style", "compressed", "--scss", "--stdin", outputName),
                stdin=PIPE, stdout=PIPE, stderr=STDOUT)
 
     ps.stdin.write(outputContent)
