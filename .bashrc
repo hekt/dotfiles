@@ -2,6 +2,8 @@ export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
 export PS2="\[\033[33m\]>\[\e[00m\] "
 export TERM="xterm-256color"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # History
 export HISTCONTROL=ignoredups
@@ -12,7 +14,8 @@ export HISTSIZE=2000
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make -O"
-
+alias ghcis="ghci -package-db .cabal-sandbox/x86_64-osx-ghc-7.6.3-packages.conf.d/"
+alias ghcms="ghc --make -O -package-db .cabal-sandbox/x86_64-osx-ghc-7.6.3-packages.conf.d/"
 # functions
 function mc() {
     mkdir -p $1 && cd $1
