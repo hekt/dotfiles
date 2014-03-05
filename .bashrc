@@ -10,17 +10,22 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="cd*"
 export HISTSIZE=2000
 
+# Variables
+cabal_sandbox_path=".cabal-sandbox/x86_64-osx-ghc-`ghc --version | sed 's/[a-zA-Z, ]*//'`-packages.conf.d/"
+
 # Aliases
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
 alias ghcm="ghc --make -O"
-alias ghcis="ghci -package-db .cabal-sandbox/x86_64-osx-ghc-7.6.3-packages.conf.d/"
-alias ghcms="ghc --make -O -package-db .cabal-sandbox/x86_64-osx-ghc-7.6.3-packages.conf.d/"
-# functions
-function mc() {
+alias ghcis="ghci -package-db $cabal_sandbox_path"
+alias ghcms="ghc --make -O -package-db $cabal_sandbox_path"
+alias runghcs="runghc -package-db --ghc-arg=$cabal_sandbox_path"
+
+# Functions
+mc() {
     mkdir -p $1 && cd $1
 }
-function notice() {
+notice() {
     local title="Terminal"
     local message="done"
     local error_message="error"
@@ -29,10 +34,10 @@ function notice() {
     if [ !$2 = "" ]; then error_message=$2; fi
     echo "display notification \"$message\" with title \"$title\"" | osascript || echo "display notification \"$error_message\" with title \"$title\"" | osascript
 }
-function ehgm() {
+ehgm() {
     ehgm.pl $@ && notice "ehgm"
 }
-function timer() {
+timer() {
     perl ~/bin/timer.pl --color=green --scale=1 --time=$(($@*60)) && notice "Timer"
 }
 
