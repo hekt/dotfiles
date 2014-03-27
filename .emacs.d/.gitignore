@@ -10,3 +10,5 @@ elpa/*
 url/cookies
 elpa/archives
 ac-comphist.dat
+.mc-lists.el
+helm-adaptive-history
