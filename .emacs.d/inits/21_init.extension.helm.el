@@ -1,10 +1,13 @@
 ;; Helm
 
+(custom-set-variables
+ '(helm-truncate-lines t))
+
 ;; keybinds
 
-(define-key global-map (kbd "C-c a") 'helm-buffers-list)
+(define-key global-map (kbd "C-c a") 'helm-mini)
 (define-key global-map (kbd "C-c C-f") 'helm-find-files)
-(define-key global-map (kbd "C-c C-r") 'helm-recentf)
+;; (define-key global-map (kbd "C-c C-r") 'helm-recentf)
 (define-key global-map (kbd "M-y") 'helm-show-kill-ring)
 
 ;; enable C-h in helm
