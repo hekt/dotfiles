@@ -13,10 +13,6 @@
 (global-set-key (kbd "C-c M-r") 'replace-regexp)
 (global-set-key (kbd "M-g") 'fill-region-with-fold-by-comma)
 
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-q"))
-(global-set-key (kbd "C-z C-q") 'quoted-insert)
-
 ;; auto complete ( { [ "
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
