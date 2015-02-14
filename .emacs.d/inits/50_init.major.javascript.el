@@ -7,4 +7,4 @@
               '("FileReader" "jQuery" "$" "setTimeout" "clearTimeout"
                 "setInterval" "clearInterval" "location" "console" "JSON"
                 "chrome" "localStorage" "sessionStorage" "history"
-                "navigator"))
+                "navigator" "Vue"))
