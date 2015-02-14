@@ -1,2 +1,4 @@
 :set prompt "λ...> "
 :set +s
+:set -XOverloadedStrings
+:set -XExtendedDefaultRules
