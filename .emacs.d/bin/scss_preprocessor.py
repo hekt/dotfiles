@@ -6,7 +6,12 @@ import re
 from subprocess import Popen, PIPE, STDOUT
 
 
-PROPERTIES = ["box-sizing", "box-flex", "transform"]
+PROPERTIES = [
+    "box-sizing", "box-flex", "transform", "flex-wrap", "flex-grow",
+    "flex-shrink", "flex-basis", "flex", "user-select", "appearance",
+    "animation", "animation-name", "animation-timing-function",
+    "animation-duration"
+    ]
 PREFIXES = ["-webkit-", "-moz-", "-ms-", "-o-", ""]
 
 
@@ -47,13 +52,14 @@ def replaceRem(s):
 def doAll(s):
     for p in PROPERTIES:
         s = addPrefixes(s, p)
-    s = replaceRem(s)
+    # s = replaceRem(s)
 
     return s
 
 
 def compileScss(outputName, outputContent):
-    ps = Popen(("sass", "--style", "compressed", "--scss", "--stdin", outputName),
+    ps = Popen(("sass", "--style", "compressed", "--sourcemap=none",
+                "--scss", "--stdin", outputName),
                stdin=PIPE, stdout=PIPE, stderr=STDOUT)
 
     ps.stdin.write(outputContent)
