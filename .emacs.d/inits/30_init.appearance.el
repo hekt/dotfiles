@@ -74,5 +74,3 @@
   (set-face-background  'helm-match "black")
   (call-process-shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
   (call-process-shell-command "osascript ~/.iterm/solarized-dark.scpt"))
-
-(dark-theme)
