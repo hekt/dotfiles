@@ -39,7 +39,28 @@
                     :foreground "blue"
                     :background "default")
 
-;; Toggle theme light and dark function
+;; solarized-dark hotfix
+;; https://github.com/pyr/dot.emacs/blob/20f06ff6345f1c76d30f9ac1aed54ddf0e3b9531/customizations/40-theme.el
+(setq solarized-default-background-mode 'dark)
+(load-theme 'solarized t)
+(defun set-background-mode (frame mode)
+  (set-frame-parameter frame 'background-mode mode)
+  (when (not (display-graphic-p frame))
+    (set-terminal-parameter (frame-terminal frame) 'background-mode mode))
+  (enable-theme 'solarized))
+(defun switch-theme ()
+  (interactive)
+  (let ((mode  (if (eq (frame-parameter nil 'background-mode) 'dark)
+                   'light 'dark)))
+    (set-background-mode nil mode)))
+(add-hook 'after-make-frame-functions
+          (lambda (frame) (set-background-mode frame solarized-default-background-mode)))
+(set-background-mode nil solarized-default-background-mode)
+
+;; Change iTesm2, tmux and emacs's theme
+(defun tne-theme()
+  (interactive)
+  (load-theme 'my-tomorrow-night-eighties t))
 (defun light-theme ()
   (interactive)
   (load-theme 'solarized-light t)
