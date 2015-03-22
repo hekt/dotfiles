@@ -35,3 +35,8 @@
 ;; disable the kill-ring and the system clipboard integration
 (setq interprogram-cut-function nil)
 (setq interprogram-paste-function nil)
+
+;; autoinsert
+(auto-insert-mode)
+(setq auto-insert-directory "~/.emacs.d/templates/")
+(define-auto-insert "\\.js$" "javascript.js")
