@@ -24,7 +24,7 @@
  '(linum ((t (:foreground "#999999" :background "#393939"))))
 
  ;; js2-mode
- '(js2-function-param ((t (:foreground "green"))))
+ '(js2-function-param ((t (:foreground "blue"))))
  '(js2-external-variable ((t (:foreground "red"))))
 
  ;; helm
