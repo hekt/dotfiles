@@ -5,4 +5,3 @@
 ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 (setq haskell-program-name "/usr/local/bin/ghci")
-

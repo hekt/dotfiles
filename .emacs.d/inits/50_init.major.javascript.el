@@ -15,4 +15,6 @@
                 "$" "jQuery" "Vue" "chrome"
                 ;; node.js
                 "global" "require" "process" "module" "exports"
+                ;; mocha
+                "describe" "it" "before" "after" "beforeEach" "afterEach"
                 ))

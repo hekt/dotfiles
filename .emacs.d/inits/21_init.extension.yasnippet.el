@@ -3,6 +3,9 @@
       '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
+;; keybinds
+(define-key yas-minor-mode-map (kbd "C-]") 'yas-next-field)
+
 ;; html-mode functions
 (defun get-html-tag-name (s)
   (cond 

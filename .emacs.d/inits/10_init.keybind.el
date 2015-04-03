@@ -7,7 +7,6 @@
 ;;
 ;; global-map
 ;; 
-
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-c r") 'replace-string)
 (global-set-key (kbd "C-c M-r") 'replace-regexp)
