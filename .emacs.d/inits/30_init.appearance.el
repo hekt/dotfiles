@@ -60,7 +60,8 @@
 ;; Change iTesm2, tmux and emacs's theme
 (defun tne-theme()
   (interactive)
-  (load-theme 'my-tomorrow-night-eighties t))
+  (load-theme 'my-tomorrow-night-eighties t)
+  (call-process-shell-command "tmux source-file ~/.tmux/tomorrow-night-eighties.conf"))
 (defun light-theme ()
   (interactive)
   (load-theme 'solarized-light t)
@@ -95,3 +96,5 @@
   (set-face-background  'helm-match "black")
   (call-process-shell-command "tmux source-file ~/.tmux/solarized-dark.conf")
   (call-process-shell-command "osascript ~/.iterm/solarized-dark.scpt"))
+
+(tne-theme)
