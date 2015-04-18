@@ -20,6 +20,8 @@ alias ghcm="ghc --make -O"
 alias ghcis="ghci -package-db $cabal_sandbox_path"
 alias ghcms="ghc --make -O -package-db $cabal_sandbox_path"
 alias runghcs="runghc -package-db --ghc-arg=$cabal_sandbox_path"
+alias node="node --harmony --use_strict"
+alias mocha="mocha --harmony"
 
 # Functions
 mc() {
