@@ -10,7 +10,7 @@ PROPERTIES = [
     "box-sizing", "box-flex", "transform", "flex-wrap", "flex-grow",
     "flex-shrink", "flex-basis", "flex", "user-select", "appearance",
     "animation", "animation-name", "animation-timing-function",
-    "animation-duration"
+    "animation-duration", "text-size-adjust", "text-stroke", "text-fill",
     ]
 PREFIXES = ["-webkit-", "-moz-", "-ms-", "-o-", ""]
 
