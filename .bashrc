@@ -60,3 +60,13 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+## php
+if [ -f $HOME/.phpenv/bin/phpenv ]; then
+    export PATH=$PATH:$HOME/.phpenv/bin
+    eval "$(phpenv init -)"
+fi
+phpenv-fpm() {
+    local ver=`phpenv version | sed -E 's/^([0-9]+.[0-9]+.[0-9]+).*$/\1/'`
+    "$HOME/.phpenv/versions/$ver/sbin/php-fpm" "$@"
+}
