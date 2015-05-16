@@ -12,9 +12,7 @@ GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWSTASHSTATE=1
 # export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
-export PS1="\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ "
-##############
-
+export PS1='\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 
 # History
 export HISTCONTROL=ignoredups
