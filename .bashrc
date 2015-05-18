@@ -1,9 +1,18 @@
 export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
-export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
 export PS2="\[\033[33m\]>\[\e[00m\] "
 export TERM="xterm-256color"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# Prompt
+source $HOME/.bash/git-completion.bash
+source $HOME/.bash/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWSTASHSTATE=1
+# export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
+export PS1='\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 
 # History
 export HISTCONTROL=ignoredups
