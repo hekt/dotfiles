@@ -1,4 +1,4 @@
-:set prompt "λ...> "
+:set prompt "\ESC[33mλ...> \ESC[m"
 :set +s
 :set -XOverloadedStrings
 :set -XExtendedDefaultRules
