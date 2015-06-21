@@ -4,7 +4,7 @@
     name = hekt
     email = hektorg@gmail.com
 [core]
-    editor = vi
+    editor = nano
     pager = less
     excludesfile = ~/.gitignore.global
 [color]
@@ -13,3 +13,19 @@
 	pushInsteadOf = git://github.com/
 [push]
 	default = simple
+[alias]
+    a = add
+    aa = add .
+    c = commit
+    co = checkout
+    d = diff
+    f = fetch origin
+    g = grep
+    s = status
+    cm = commit -m
+    rb = rebase
+    rb2 = rebase -i HEAD~2
+    rb3 = rebase -i HEAD~3
+    rb4 = rebase -i HEAD~4
+    l1 = log --oneline -n 10
+    lp = log -p -1
