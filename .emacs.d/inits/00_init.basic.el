@@ -40,3 +40,4 @@
 (auto-insert-mode)
 (setq auto-insert-directory "~/.emacs.d/templates/")
 (define-auto-insert "\\.js$" "javascript.js")
+(define-auto-insert "\\.php$" "template.php")
