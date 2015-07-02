@@ -4,6 +4,7 @@
   (helm-mode 0)
   
   (custom-set-variables
+   '(helm-buffer-max-length 40)
    '(helm-truncate-lines t))
 
   ;; keybinds

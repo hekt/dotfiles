@@ -61,6 +61,8 @@
 (defun tne-theme()
   (interactive)
   (load-theme 'my-tomorrow-night-eighties t)
+  (set-face-background 'helm-buffer-saved-out "black")
+  (set-face-foreground 'helm-buffer-saved-out "red")
   (call-process-shell-command "tmux source-file ~/.tmux/tomorrow-night-eighties.conf"))
 (defun light-theme ()
   (interactive)
