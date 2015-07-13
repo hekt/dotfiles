@@ -2,3 +2,4 @@
 :set +s
 :set -XOverloadedStrings
 :set -XExtendedDefaultRules
+
