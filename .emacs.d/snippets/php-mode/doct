@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: doct
+# key: doct
+# --
+/**
+ * @covers ::$0
+ */

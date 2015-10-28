@@ -3,6 +3,4 @@
 # key: cls
 # --
 class ${1:Class}${2: extends ${3:Parent}}
-{
-	$0
-}
+  $0

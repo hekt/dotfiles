@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: docpr
+# key: docpr
+# --
+/**
+ * $1
+ *
+ * @param $2
+ * @return $3
+ */
+$0
