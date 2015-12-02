@@ -19,18 +19,9 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="cd*"
 export HISTSIZE=2000
 
-# Variables
-cabal_sandbox_path=".cabal-sandbox/x86_64-osx-ghc-`ghc --version | sed 's/[a-zA-Z, ]*//'`-packages.conf.d/"
-
 # Aliases
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
-alias ghcm="ghc --make -O"
-alias ghcis="ghci -package-db $cabal_sandbox_path"
-alias ghcms="ghc --make -O -package-db $cabal_sandbox_path"
-alias runghcs="runghc -package-db --ghc-arg=$cabal_sandbox_path"
-alias node="node --harmony --use_strict"
-alias mocha="mocha --harmony"
 alias g="git"
 
 # Functions
@@ -59,17 +50,10 @@ alias rm="rm -i"
 alias sudo="sudo "
 alias rsync="rsync --exclude-from ~/.rsyncignore"
 
-## cabal
-export PATH=$HOME/.cabal/bin:$PATH
-
-## npm
-export PATH=/usr/local/share/npm/bin:$PATH
-
-## pythonbrew
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 ## php
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+## IL
+alias hovervg="cd $HOME/Vagrant/hover && vagrant up && ssh hovervm"
+alias shukeenvg="cd $HOME/Vagrant/shukeen && vagrant up && ssh shukeen"
+alias shukeenfs="cd $HOME && sshfs shukeen:/home/k-horie shukeenvm"

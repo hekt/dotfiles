@@ -27,3 +27,6 @@
 
 ;; compile
 (global-set-key (kbd "C-c c") 'compile)
+
+;; flymake
+(global-set-key (kbd "\C-x n") 'flymake-goto-next-error)

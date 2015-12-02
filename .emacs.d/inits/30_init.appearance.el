@@ -3,9 +3,9 @@
 ;; linum
 (global-linum-mode t)
 (setq linum-format "%3d ")
-;; (setq linum-delay t)
-;; (defadvice linum-schedule (around my-linum-schedule () activate)
-;;   (run-with-idle-timer 0.2 nil #'linum-update-current))
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))
 
 ;; display tab/space
 ;; http://d.hatena.ne.jp/syohex/20110119/1295450495
@@ -20,9 +20,9 @@
         ;; If this is a problem for you, please, comment the line below.
         (tab-mark ?\t [?\xBB ?\t] [?\\ ?\t])))
 (setq whitespace-space-regexp "\\(\u3000+\\)")
-(set-face-foreground 'whitespace-tab "#999999")
+(set-face-foreground 'whitespace-tab "#666666")
 (set-face-background 'whitespace-tab 'nil)
-(set-face-foreground 'whitespace-space "#999999")
+(set-face-foreground 'whitespace-space "#666666")
 (set-face-background 'whitespace-space 'nil)
 (global-whitespace-mode 1)
 
