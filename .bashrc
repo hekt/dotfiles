@@ -12,7 +12,8 @@ GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWSTASHSTATE=1
 # export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
-export PS1='\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\]\n$ '
+# export PS1='\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\]\n$ '
+export PS1='\[\033[35m\][\D{%a %H:%M}] \[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\]\n$ '
 
 # History
 export HISTCONTROL=ignoredups
@@ -57,3 +58,12 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 alias hovervg="cd $HOME/Vagrant/hover && vagrant up && ssh hovervm"
 alias shukeenvg="cd $HOME/Vagrant/shukeen && vagrant up && ssh shukeen"
 alias shukeenfs="cd $HOME && sshfs shukeen:/home/k-horie shukeenvm"
+
+### docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+### nvm
+export NVM_DIR="$HOME/.nvm"
+[  -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

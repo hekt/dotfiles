@@ -5,7 +5,7 @@
 
  '(default ((t (:background "default" :foreground "default"))))
  '(region ((t (:foreground "#515151" :background "white"))))
- '(hl-line ((t (:background "#393939"))))
+ '(hl-line ((t (:background "#444444"))))
  '(font-lock-variable-name-face ((t (:foreground "cyan"))))
  '(font-lock-comment-face ((t (:foreground "#999999"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#999999"))))
@@ -21,7 +21,7 @@
  ;; '(mode-line-buffer-id ((t (:foreground "default"))))
 
  ;; linum
- '(linum ((t (:foreground "#999999" :background "#393939"))))
+ '(linum ((t (:foreground "#999999" :background "#444444"))))
 
  ;; js2-mode
  '(js2-function-param ((t (:foreground "blue"))))
@@ -34,7 +34,7 @@
  ;; '(helm-buffer-directory (:foreground ,blue))
  ;; '(helm-ff-directory (:foreground ,aqua))
  ;; '(helm-candidate-number (:foreground ,red))
- '(helm-selection ((t (:background "#393939"))))
+ '(helm-selection ((t (:foreground "#999999" :background "#444444"))))
  ;; '(helm-separator ((t (:foreground "red"))))
  '(helm-source-header ((t (:foreground "default" :background "#515151"))))
  )

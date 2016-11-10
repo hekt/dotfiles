@@ -17,6 +17,8 @@
  '(flymake-phpcs-standard "/Users/k-horie/repos/infiniteloop-codesniffer/InfiniteLoop"))
 
 (add-hook 'php-mode-hook 'php-mode-hooks)
+
+(add-hook 'php-mode-hook 'php-enable-psr2-coding-style)
 ;; flycheck
 (add-hook 'php-mode-hook 'flymake-phpcs-load)
 

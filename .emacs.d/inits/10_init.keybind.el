@@ -11,6 +11,7 @@
 (global-set-key (kbd "C-c r") 'replace-string)
 (global-set-key (kbd "C-c M-r") 'replace-regexp)
 (global-set-key (kbd "M-g") 'fill-region-with-fold-by-comma)
+(global-set-key (kbd "C-c u") 'upcase-region)
 
 ;; auto complete ( { [ "
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
