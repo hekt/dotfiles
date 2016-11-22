@@ -18,3 +18,22 @@
                 ;; mocha
                 "describe" "it" "before" "after" "beforeEach" "afterEach"
                 ))
+
+;; coffee-mode
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  (auto-complete-mode t)
+  (set (make-local-variable 'tab-width) 2)
+  (setq coffee-tab-width 2))
+
+(add-hook 'coffee-mode-hook
+          '(lambda() (coffee-custom)))
+
+;; typescript-mode
+(defun typescript-mode-hooks ()
+  "typescript-mode-hook"
+  (auto-complete-mode t)
+  (set (make-local-variable 'tab-width) 2)
+  (setq typescript-indent-level 2))
+
+(add-hook 'typescript-mode-hook 'typescript-mode-hooks)

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: resmock
+# key: resmock
+# --
+var res = httpMocks.createResponse();$0

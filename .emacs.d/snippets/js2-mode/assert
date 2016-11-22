@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: assert
+# key: assert
+# --
+it('$1', function(done) {
+  var input = $2;
+  var expected = $3;
+  var actual = $4;
+  assert.${5:equal}(actual, expected);
+});$0

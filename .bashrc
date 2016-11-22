@@ -1,4 +1,4 @@
-export PATH=$HOME/.emacs.d/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export PS2="> "
 export TERM="xterm-256color"
 export LANG="en_US.UTF-8"
@@ -12,23 +12,20 @@ GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWSTASHSTATE=1
 # export PS1="\[\033[33m\]\w \[\e[00m\]\$ "
-export PS1='\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\]\n$ '
+# export PS1='\[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\]\n$ '
+export PS1='\[\033[35m\][\D{%a %H:%M}] \[\033[33m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\]\n$ '
 
 # History
 export HISTCONTROL=ignoredups
-export HISTIGNORE="cd*"
 export HISTSIZE=2000
-
-# Variables
-cabal_sandbox_path=".cabal-sandbox/x86_64-osx-ghc-`ghc --version | sed 's/[a-zA-Z, ]*//'`-packages.conf.d/"
 
 # Aliases
 alias emacs="env TERM=xterm-256color emacs -nw"
 alias imgsize="sips --getProperty pixelHeight --getProperty pixelWidth"
-alias ghcm="ghc --make -O"
-alias ghcis="ghci -package-db $cabal_sandbox_path"
-alias ghcms="ghc --make -O -package-db $cabal_sandbox_path"
-alias runghcs="runghc -package-db --ghc-arg=$cabal_sandbox_path"
+alias ghc="stack ghc --"
+alias ghci="stack ghci --"
+alias runghc="stack runghc --"
+alias runhaskell="stack runghc --"
 alias node="node --harmony --use_strict"
 alias mocha="mocha --harmony"
 alias g="git"
@@ -63,13 +60,10 @@ alias rsync="rsync --exclude-from ~/.rsyncignore"
 export PATH=$HOME/.cabal/bin:$PATH
 
 ## npm
-export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=$PATH:/usr/local/share/npm/bin
 
 ## pythonbrew
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 ## php
 export PATH="$HOME/.composer/vendor/bin:$PATH"

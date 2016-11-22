@@ -54,6 +54,18 @@
    "scss_preprocessor.py" nil buffer t
    (format "%s.css" (file-name-sans-extension (buffer-file-name)))))
 
+(defun un-indent-by-removing-2-spaces ()
+  "remove 2 spaces from beginning of of line"
+  (interactive)
+  (save-excursion
+    (save-match-data
+      (beginning-of-line)
+      ;; get rid of tabs at beginning of line
+      (when (looking-at "^\\s-+")
+        (untabify (match-beginning 0) (match-end 0)))
+      (when (looking-at "^  ")
+        (replace-match "")))))
+
 ;; 
 ;; Advices
 ;; 

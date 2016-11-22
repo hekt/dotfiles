@@ -9,7 +9,6 @@ set nowrap
 set softwrap
 set smooth
 set morespace
-set undo
 set cut
 set suspend
 

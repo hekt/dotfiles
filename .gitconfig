@@ -9,6 +9,8 @@
     excludesfile = ~/.gitignore.global
 [color]
     ui = true
+[diff]
+    compactionHeuristic = true
 [url "git@github.com:"]
 	pushInsteadOf = git://github.com/
 [push]

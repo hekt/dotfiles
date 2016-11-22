@@ -4,8 +4,8 @@
  'my-tomorrow-night-eighties
 
  '(default ((t (:background "default" :foreground "default"))))
- '(region ((t (:foreground "#515151" :background "white"))))
- '(hl-line ((t (:background "#393939"))))
+ '(region ((t (:foreground "#999999" :background "white"))))
+ '(hl-line ((t (:background "#515151"))))
  '(font-lock-variable-name-face ((t (:foreground "cyan"))))
  '(font-lock-comment-face ((t (:foreground "#999999"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#999999"))))
@@ -34,9 +34,9 @@
  ;; '(helm-buffer-directory (:foreground ,blue))
  ;; '(helm-ff-directory (:foreground ,aqua))
  ;; '(helm-candidate-number (:foreground ,red))
- '(helm-selection ((t (:background "#393939"))))
+ '(helm-selection ((t (:background "#515151"))))
  ;; '(helm-separator ((t (:foreground "red"))))
- '(helm-source-header ((t (:foreground "default" :background "#515151"))))
+ '(helm-source-header ((t (:foreground "default" :background "#999999"))))
  )
 
 ;; (set-face-foreground 'paren-face "red")
