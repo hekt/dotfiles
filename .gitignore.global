@@ -1,4 +1,5 @@
 *.local
+*.local.*
 
 # OSX
 .DS_Store
@@ -31,3 +32,6 @@ cabal.sandbox.config
 
 # sass
 .sass-cache
+
+# javascript
+node_modules/
