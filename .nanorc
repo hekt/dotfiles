@@ -13,13 +13,6 @@ set cut
 set suspend
 
 ##
-## keybinds
-##
-
-bind ^S research main
-bind ^@ mark main
-
-##
 ## syntax highlighting
 ##
 
