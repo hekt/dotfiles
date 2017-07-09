@@ -7,6 +7,10 @@
 ;; (defadvice linum-schedule (around my-linum-schedule () activate)
 ;;   (run-with-idle-timer 0.2 nil #'linum-update-current))
 
+;; paren-mode
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
 ;; display tab/space
 ;; http://d.hatena.ne.jp/syohex/20110119/1295450495
 (require 'whitespace)
@@ -27,36 +31,40 @@
 (global-whitespace-mode 1)
 
 ;; modeline
+(defun simple-mode-line-render (left right)
+  "Return a string of `window-width' length containing LEFT, and RIGHT
+ aligned respectively."
+  (let* ((available-width (- (window-total-width) (length left) 1)))
+    (format (format "%%s %%%ds" available-width) left right)))
+(defun my-mode-line-count-lines ()
+  (setq my-mode-line-buffer-line-count
+        (int-to-string )))
+
+(setq-default mode-line-format nil)
 (setq-default
- mode-line-format
- '((:eval
-    (cond (buffer-read-only
-           (propertize " RO " 'face 'mode-line-read-only-face))
-          ((buffer-modified-p)
-           (propertize " ** " 'face 'mode-line-modified-face))
-          (t " -- ")))
-   " "
-   mode-line-buffer-identification
-   "   ("
-   (column-number-mode "%2c: ")
-   (line-number-mode "%2l")
-   (:eval (format "/%d" (count-lines (point-max) (point-min))))
-   ")   ["
-   mode-name
-   mode-line-process
-   minor-mode-alist
-   "]"
-   "  "   global-mode-string
-   ))
+ header-line-format
+ '((:eval (simple-mode-line-render
+           (concat
+            (cond (buffer-read-only
+                   (propertize " # " 'face 'mode-line-read-only-face))
+                  ((buffer-modified-p)
+                   (propertize " * " 'face 'mode-line-modified-face))
+                  (t " - "))
+            (format-mode-line " %b"))
+           (format-mode-line
+            (concat
+             "%c, %l/"
+             (int-to-string (count-lines (point-min) (point-max)))
+             " "))))))
 
 (make-face 'mode-line-read-only-face)
 (set-face-attribute 'mode-line-read-only-face nil
-                    :foreground "red"
-                    :background "default")
+                    :foreground nil
+                    :background "red")
 (make-face 'mode-line-modified-face)
 (set-face-attribute 'mode-line-modified-face nil
-                    :foreground "blue"
-                    :background "default")
+                    :foreground nil
+                    :background "blue")
 
 ;; solarized-dark hotfix
 ;; https://github.com/pyr/dot.emacs/blob/20f06ff6345f1c76d30f9ac1aed54ddf0e3b9531/customizations/40-theme.el

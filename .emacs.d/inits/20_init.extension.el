@@ -20,3 +20,6 @@
              '("localhost" nil nil))
 (add-to-list 'tramp-default-proxies-alist
              '((regexp-quote (system-name)) nil nil))
+
+(require 'multiple-cursors)
+(define-key global-map (kbd "C-M-m") 'mc/mark-all-in-region)

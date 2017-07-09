@@ -20,9 +20,6 @@
  '(mode-line-inactive ((t (:foreground "#515151" :background "default"))))
  ;; '(mode-line-buffer-id ((t (:foreground "default"))))
 
- ;; linum
- '(linum ((t (:foreground "#999999" :background "#393939"))))
-
  ;; js2-mode
  '(js2-function-param ((t (:foreground "blue"))))
  '(js2-external-variable ((t (:foreground "red"))))
@@ -37,23 +34,17 @@
  '(helm-selection ((t (:background "#515151"))))
  ;; '(helm-separator ((t (:foreground "red"))))
  '(helm-source-header ((t (:foreground "default" :background "#999999"))))
- )
 
-;; (set-face-foreground 'paren-face "red")
-;; (set-face-foreground 'helm-buffer-not-saved "yellow")
-
-
-
-
- ;; ;; モードライン
- ;; '(mode-line ((t (:foreground "#F8F8F2" :background "#000000"
- ;;                  :box (:line-width 1 :color "#000000" :style released-button)))))
- ;; '(mode-line-buffer-id ((t (:foreground nil :background nil))))
- ;; '(mode-line-inactive ((t (:foreground "#BCBCBC" :background "#333333"
- ;;                           :box (:line-width 1 :color "#333333")))))
-
- ;; ;; ハイライト
+ '(header-line ((t (:foreground "#393939" :background "#999999"))))
+ '(mode-line ((t (:foreground "#393939" :background "#999999"))))
+ '(mode-line-inactive ((t (:foreground "#393939" :background "#777777"))))
+ '(linum ((t (:foreground "#666666" :background "#393939"))))
  ;; '(highlight ((t (:foreground "#000000" :background "#C4BE89"))))
+
+ ;; 括弧
+ '(show-paren-match-face ((t (:foreground "black" :background "yellow"))))
+ ;; '(paren-face ((t (:foreground "black" :background "red"))))
+ )
 
  ;; ;; 括弧
  ;; '(show-paren-match-face ((t (:foreground "#1B1D1E" :background "#FD971F"))))

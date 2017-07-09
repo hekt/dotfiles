@@ -1,4 +1,5 @@
 ;; javascript
+(setq js-indent-level 2)
 
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -18,6 +19,10 @@
                 ;; mocha
                 "describe" "it" "before" "after" "beforeEach" "afterEach"
                 ))
+
+;; vue-mode
+(require 'vue-mode)
+(add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode))
 
 ;; coffee-mode
 (defun coffee-custom ()
