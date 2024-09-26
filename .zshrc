@@ -1,0 +1,53 @@
+# directory fullpath of this file
+FILE_DIR="$(cd "$(dirname "${(%):-%N}")" && pwd)"
+
+alias ls="ls -hlp --color"
+alias lsa="ls -a"
+alias rm="rm -i"
+alias sudo="sudo "
+alias g="git"
+
+# less
+export LESS="--quit-if-one-screen --no-init --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS"
+
+# fzf
+export FZF_DEFAULT_OPTS="--ansi --color 16,prompt:4,bg+:#3b3b3b,fg:#bbbbbb,fg+:#d6d6d6,hl:3,hl+:3"
+
+# keybinds
+disable r
+stty stop undef
+stty start undef
+bindkey '^r' history-incremental-search-backward
+bindkey '^s' history-incremental-search-forward
+
+# completion
+autoload -Uz compinit
+compinit -u
+setopt list_packed
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# hist
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt hist_expand
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
+setopt EXTENDED_HISTORY
+
+# anyframe
+fpath=($FILE_DIR/.zsh.d/anyframe(N-/) $fpath)
+autoload -Uz anyframe-init
+anyframe-init
+if type fzf >/dev/null 2>&1; then
+    zstyle ":anyframe:selector:" use fzf
+
+    # search history
+    zle -N select-history
+    bindkey '^r' anyframe-widget-put-history
+    bindkey '^s' anyframe-widget-put-history
+fi

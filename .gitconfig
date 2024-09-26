@@ -1,0 +1,47 @@
+[alias]
+    a = add
+    ap = add -p
+    aa = add .
+    al = ! git status --short | fzf --multi | sed -E -e 's/^( [A-Z]|[A-Z] |\\?\\?|!!) //g' | xargs git add
+    br = branch
+    c = commit
+    ca = commit --amend
+    cm = commit -m
+    cam = commit --amend -m
+    co = checkout
+    cob = checkout -b
+    col = ! git checkout `git branch --sort=-authordate | fzf | sed 's/^*//'`
+    cp = cherry-pick
+    d = diff
+    dc = diff --cached
+    ds = diff --stat
+    f = fetch
+    forcepush = push --force-with-lease
+    gr = grep
+    grn = grep --name-only
+    l = log
+    mg = merge
+    s = status -u
+    sa = stash apply
+    sp = stash pop
+    st = stash -u
+    l1 = log -n 10 --oneline --no-merges
+    l1m = log -n 10 --oneline
+    lp = log -p -1
+    lpn = log -p -1 --name-only
+    rb = rebase
+    rb2 = rebase -i HEAD~2
+    rb3 = rebase -i HEAD~3
+    rb4 = rebase -i HEAD~4
+[color]
+    ui = true
+[user]
+    email = hektorg@gmail.com
+    name = hekt
+	signingkey = 3A17F1BBAEDB1F15
+[core]
+    autocrlf = false
+[push]
+    default = simple
+[commit]
+	gpgsign = true

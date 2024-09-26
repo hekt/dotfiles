@@ -1,0 +1,38 @@
+{
+  "title": "esc = ctrl + g (without iTerm2)",
+  "rules": [
+    {
+      "description": "Control + g => Escape (without iTerm2)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com.googlecode.iterm2$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
