@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: dashed border
-# key: dashed
-# --
-${1:1px} dashed ${2:transparent} $0

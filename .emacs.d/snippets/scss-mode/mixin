@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: mixin
-# key: mixin
-# --
-@mixin ${1:name}($2) {
-  ${3:property}: ${4:value} ;$0
-}

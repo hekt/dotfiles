@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: font shorthand values
-# key: fontv
-# --
-$1${2:size}/${3:line-height} ${4:family} $0

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: solid border
-# key: solid
-# --
-${1:1px} solid ${2:transparent} $0

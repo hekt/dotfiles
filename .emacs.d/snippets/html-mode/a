@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: a
-# key: a
-# --
-<a${1: href="${2:#}"}>$0</a>

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: trh
-# key: trh
-# --
-<tr><th>$1</th>$0</tr>

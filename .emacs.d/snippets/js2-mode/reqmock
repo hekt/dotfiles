@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: reqmock
-# key: reqmock
-# --
-var req = httpMocks.createRequest({
-  method: '${1:GET}',
-  url: '$2',
-});$0

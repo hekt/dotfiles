@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: forin
-# key: forin
-# --
-for (var ${1:k} in ${2:collection}) {
-  $0
-}

@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: dl
-# key: dl
-# --
-<dl>
-  <dt>$1
-  <dd>$0
-</dl>

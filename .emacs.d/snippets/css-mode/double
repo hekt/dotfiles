@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: double border
-# key: double
-# --
-${1:3px} double ${2:transparent} $0

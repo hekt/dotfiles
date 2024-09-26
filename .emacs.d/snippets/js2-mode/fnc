@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: fnc
-# key: fnc
-# --
-function ${1:myfunc}($2) {
-  $0
-}

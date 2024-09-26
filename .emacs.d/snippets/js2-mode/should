@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: should
-# key: should
-# --
-it('$1', function(done) {
-  var input = $2;
-  var expected = $3;
-  $4(input).should.${5:equal}(expected);
-});$0

@@ -1,2 +1,0 @@
-keymap m EXTERN_LINK "/bin/echo -n %s | pbcopy"
-keymap M EXTERN "/bin/echo -n %s | pbcopy"

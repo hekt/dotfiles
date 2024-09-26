@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: closing brace
-# key: }
-# --
-}
-
-${1:selector} {
-  ${2:property}: ${3:${2:$(get-css-default-value yas/text)}} ;$0
-}
