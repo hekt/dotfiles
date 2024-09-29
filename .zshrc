@@ -13,6 +13,9 @@ export LESS="--quit-if-one-screen --no-init --ignore-case --LONG-PROMPT --RAW-CO
 # fzf
 export FZF_DEFAULT_OPTS="--ansi --color 16,prompt:4,bg+:#3b3b3b,fg:#bbbbbb,fg+:#d6d6d6,hl:3,hl+:3"
 
+# use homebrew binaries first
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 # keybinds
 disable r
 stty stop undef
