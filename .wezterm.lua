@@ -9,7 +9,6 @@ config.font = wezterm.font "Hackgen Console NF"
 config.font_size = 14.0
 config.line_height = 1.2
 config.hide_tab_bar_if_only_one_tab = true
-config.default_cwd = wezterm.homedir
 config.scrollback_lines = 3500
 config.enable_scroll_bar = false
 config.window_background_opacity = 0.9
@@ -36,6 +35,20 @@ config.mouse_bindings = {
         event = { Up = {streak = 1, button = "Left" } },
         mods = "CMD",
         action = "OpenLinkAtMouseCursor",
+    },
+}
+config.keys = {
+    -- open new window with home directory
+    {
+        key = "n",
+        mods = "CMD",
+        action = act.SpawnCommandInNewWindow { cwd = wezterm.home_dir },
+    },
+    -- open new tab with home directory
+    {
+        key = 't',
+        mods = "CMD",
+        action = act.SpawnCommandInNewTab { cwd = wezterm.home_dir },
     },
 }
 
