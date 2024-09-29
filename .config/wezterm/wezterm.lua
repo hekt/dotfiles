@@ -32,7 +32,7 @@ config.mouse_bindings = {
     },
     -- and make Cmd-Click open hyperlinks
     {
-        event = { Up = {streak = 1, button = "Left" } },
+        event = { Up = { streak = 1, button = "Left" } },
         mods = "CMD",
         action = "OpenLinkAtMouseCursor",
     },
