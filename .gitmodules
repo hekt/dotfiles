@@ -1,3 +1,3 @@
-[submodule ".zsh.d/anyframe"]
-	path = .zsh.d/anyframe
+[submodule ".config/zsh/anyframe"]
+	path = .config/zsh/anyframe
 	url = git@github.com:mollifier/anyframe.git

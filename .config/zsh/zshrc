@@ -43,7 +43,7 @@ setopt share_history
 setopt EXTENDED_HISTORY
 
 # anyframe
-fpath=($FILE_DIR/.zsh.d/anyframe(N-/) $fpath)
+fpath=($FILE_DIR/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
 anyframe-init
 if type fzf >/dev/null 2>&1; then

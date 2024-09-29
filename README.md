@@ -17,7 +17,7 @@ ln -s /path/to/repository/.config/wezterm ~/.config/wezterm
 ## .zshrc
 
 ```shell
-if [ -f /path/to/repository/.zshrc ]; then
-  source /path/to/repository/.zshrc
+if [ -f /path/to/repository/.config/zshrc ]; then
+  source /path/to/repository/.config/zshrc
 fi
 ```
