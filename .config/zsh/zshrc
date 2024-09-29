@@ -30,6 +30,9 @@ setopt list_packed
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+# zsh-autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
+
 # hist
 export HISTSIZE=10000
 export SAVEHIST=10000
