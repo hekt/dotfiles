@@ -16,6 +16,7 @@ config.macos_window_background_blur = 10
 config.native_macos_fullscreen_mode = true
 config.swallow_mouse_click_on_pane_focus = true
 config.swallow_mouse_click_on_window_focus = true
+config.freetype_load_flags = "NO_HINTING"
 config.window_padding = {
 	left = "1cell",
 	right = "1cell",
