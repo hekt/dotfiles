@@ -3,8 +3,7 @@
 ## symlink
 
 ```shell
-ln -s /path/to/repository/.gitconfig ~/.gitconfig
-ln -s /path/to/repositoyr/.config/git/ignore ~/.config/git/ignore
+ln -s /path/to/repository/.config/git ~/.config/git
 ln -s /path/to/repository/.config/starship.toml ~/.config/starship.toml
 ln -s /path/to/repository/.config/karabiner ~/.config/karabiner
 ln -s /path/to/repository/.config/vim ~/.config/vim
