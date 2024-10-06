@@ -6,6 +6,7 @@ alias lsa="ls -a"
 alias rm="rm -i"
 alias sudo="sudo "
 alias g="git"
+alias gs="git status"
 
 # less
 export LESS="--quit-if-one-screen --no-init --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS"
