@@ -41,6 +41,7 @@
 	signingkey = 3A17F1BBAEDB1F15
 [core]
     autocrlf = false
+	editor = code --wait
 [push]
     default = simple
 [commit]
