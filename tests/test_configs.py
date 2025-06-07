@@ -14,5 +14,5 @@ def test_load_configs():
         json.load(f)
 
     starship_path = repo_root / ".config" / "starship.toml"
-    with starship_path.open('r', encoding='utf-8') as f:
+    with starship_path.open('rb') as f:
         tomllib.load(f)
