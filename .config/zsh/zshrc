@@ -54,7 +54,7 @@ if type fzf >/dev/null 2>&1; then
     zstyle ":anyframe:selector:" use fzf
 
     # search history
-    zle -N select-history
+    zle -N anyframe-widget-put-history
     bindkey '^r' anyframe-widget-put-history
     bindkey '^s' anyframe-widget-put-history
 fi
