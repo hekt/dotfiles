@@ -10,7 +10,7 @@
     cam = commit --amend -m
     co = checkout
     cob = checkout -b
-    col = ! git checkout `git branch --sort=-authordate | fzf | sed 's/^*//'`
+    col = ! git checkout $(git branch --sort=-authordate | fzf | sed 's/^..//')
     cp = cherry-pick
     d = diff
     dc = diff --cached
