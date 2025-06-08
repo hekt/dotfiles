@@ -22,6 +22,8 @@ config.window_padding = {
 	top = "0.5cell",
 	bottom = "0.5cell",
 }
+config.initial_cols = 100
+config.initial_rows = 24
 config.mouse_bindings = {
     -- Change the default click behavior so that it only selects
     -- text and doesn't open hyperlinks
