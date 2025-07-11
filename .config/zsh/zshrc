@@ -1,5 +1,8 @@
 # directory fullpath of this file
-FILE_DIR="$(cd "$(dirname "${(%):-%N}")" && pwd)"
+# Use zsh's built in path expansion to resolve the directory that
+# contains this file. This avoids relying on `cd` and `dirname`, which
+# can misbehave in some environments such as VSCode.
+FILE_DIR=${${(%):-%N}:A:h}
 
 alias ls="ls -hlp --color"
 alias lsa="ls -a"
