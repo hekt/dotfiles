@@ -4,7 +4,17 @@ local config = wezterm.config_builder()
 
 -- see: https://wezfurlong.org/wezterm/config/lua/config/term.html
 config.term = "wezterm"
-config.color_scheme = "Tomorrow Night Eighties"
+
+-- override overly dark gray/black for better contrast
+local scheme  = wezterm.color.get_builtin_schemes()["Tomorrow Night Eighties"]
+local legible_gray = "#808080"
+scheme.brights[1] = legible_gray
+for i = 232, 244 do
+  scheme.indexed[i] = legible_gray
+end
+config.colors = scheme
+
+config.text_min_contrast_ratio = 4.5
 config.font = wezterm.font "Hackgen Console NF"
 config.font_size = 14.0
 config.line_height = 1.25
