@@ -6,6 +6,8 @@
 .ac-php-conf.json
 v8-compile-cache-0
 .local
-.swp
+*.swp
 .envrc
 .env
+.claude/settings.local.json
+CLAUDE.local.md
