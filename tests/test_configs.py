@@ -1,5 +1,9 @@
 import json
 import pathlib
+import shutil
+import subprocess
+
+import pytest
 
 try:
     import tomllib  # Python 3.11+
@@ -16,3 +20,22 @@ def test_load_configs():
     starship_path = repo_root / ".config" / "starship.toml"
     with starship_path.open('rb') as f:
         tomllib.load(f)
+
+
+def test_emacs_init_syntax():
+    emacs = shutil.which('emacs')
+    if emacs is None:
+        pytest.skip('Emacs is not installed')
+    init_file = pathlib.Path(__file__).resolve().parents[1] / '.config/emacs/init.el'
+    expression = '''(with-temp-buffer
+      (insert-file-contents (pop command-line-args-left))
+      (emacs-lisp-mode)
+      (check-parens)
+      (goto-char (point-min))
+      (condition-case nil
+          (while t (read (current-buffer)))
+        (end-of-file nil)))'''
+    subprocess.run(
+        [emacs, '--batch', '-Q', '--eval', expression, str(init_file)],
+        check=True, capture_output=True, text=True,
+    )
