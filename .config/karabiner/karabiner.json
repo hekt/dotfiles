@@ -48,6 +48,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -111,6 +112,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -174,6 +176,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -236,6 +239,10 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    },
+                                    {
                                         "keyboard_types": ["ansi", "iso"],
                                         "type": "keyboard_type_if"
                                     }
@@ -253,6 +260,10 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    },
+                                    {
                                         "keyboard_types": ["jis"],
                                         "type": "keyboard_type_if"
                                     }
@@ -268,6 +279,12 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "m",
                                     "modifiers": {
@@ -282,6 +299,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -344,6 +362,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -406,6 +425,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -468,6 +488,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -530,6 +551,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$",
                                             "^org\\.gnu\\.Emacs$",
                                             "^org\\.gnu\\.AquamacsEmacs$",
                                             "^org\\.gnu\\.Aquamacs$",
@@ -592,6 +614,10 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    },
+                                    {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
@@ -613,6 +639,10 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    },
+                                    {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
@@ -633,6 +663,10 @@
                             },
                             {
                                 "conditions": [
+                                    {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    },
                                     {
                                         "bundle_identifiers": [
                                             "^org\\.eclipse\\.platform\\.ide$"
@@ -657,6 +691,10 @@
                             },
                             {
                                 "conditions": [
+                                    {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": ["^com\\.openai\\.codex$"]
+                                    },
                                     {
                                         "bundle_identifiers": [
                                             "^org\\.eclipse\\.platform\\.ide$"

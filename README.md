@@ -47,7 +47,8 @@ The daemon and Git editor settings are configured separately.
 | `C-x C-s` | Save |
 | `C-x C-c` | Exit |
 | `C-g` | Cancel |
-| `C-h` | Standard help prefix |
+| `C-h` | Backspace (also in minibuffers) |
+| `F1` | Standard help prefix |
 | `C-c r` / `C-c M-r` | Replace text / regular expression |
 | `C-x [` / `C-x ]` | Start / end of buffer |
 
@@ -56,8 +57,8 @@ the selected candidate. To use a new file name instead of a selected candidate,
 move up to the input prompt with `C-p` and press `RET`.
 In the ChatGPT terminal, the Karabiner rule provides Option-based Meta for
 `b`, `f`, `d`, `v`, and `x`. Use `Esc` followed by the key for other Meta keys.
-The existing Karabiner rule maps `C-h` to Backspace in ChatGPT; Emacs itself
-keeps the standard help binding.
+The Control-key remapping rules exclude ChatGPT, so Emacs receives the original
+keys. Emacs translates `C-h` to Backspace; this does not affect the chat input.
 
 ## .zshrc
 

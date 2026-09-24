@@ -21,7 +21,10 @@
   (setq backup-directory-alist `(("." . ,backup-dir))
         auto-save-file-name-transforms `((".*" ,auto-save-dir t))))
 
-;; Familiar editing keys. Keep C-h available for standard help commands.
+;; Make C-h act like Backspace, including in minibuffers. F1 still opens help.
+(define-key key-translation-map (kbd "C-h") (kbd "DEL"))
+
+;; Familiar editing keys.
 (keymap-global-set "C-c r" #'replace-string)
 (keymap-global-set "C-c M-r" #'replace-regexp)
 (keymap-global-set "C-x [" #'beginning-of-buffer)
