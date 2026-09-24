@@ -92,7 +92,7 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -155,7 +155,7 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -218,7 +218,7 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -574,7 +574,7 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -682,6 +682,171 @@
                         ]
                     },
                     {
+                        "description": "ChatGPT: Option b/f/d/v/x to Escape sequences (no repeat)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "repeat": false
+                                    },
+                                    {
+                                        "key_code": "b",
+                                        "repeat": false
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "repeat": false
+                                    },
+                                    {
+                                        "key_code": "f",
+                                        "repeat": false
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "repeat": false
+                                    },
+                                    {
+                                        "key_code": "d",
+                                        "repeat": false
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "repeat": false
+                                    },
+                                    {
+                                        "key_code": "v",
+                                        "repeat": false
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "repeat": false
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "repeat": false
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.openai\\.codex$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Emacs key bindings [option+keys] (rev 5)",
                         "manipulators": [
                             {
@@ -732,7 +897,8 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.openai\\.codex$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -795,7 +961,8 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.openai\\.codex$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -863,7 +1030,8 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.openai\\.codex$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -931,7 +1099,8 @@
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.openai\\.codex$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -954,14 +1123,15 @@
                         ]
                     },
                     {
-                        "description": "Control + g => Escape (without iTerm2/WezTerm)",
+                        "description": "Control + g => Escape (without iTerm2/WezTerm/ChatGPT)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.googlecode.iterm2$",
-                                            "^com.github.wez.wezterm$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.openai\\.codex$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
