@@ -41,6 +41,14 @@ editing for `.envrc`. Packages, history, backup files, and auto-save files are
 kept under the same XDG Emacs directory.
 The daemon and Git editor settings are configured separately.
 
+Terminal frames use the terminal's default foreground and background colors.
+The active mode line, selected region, and current completion candidate use
+reverse video. Inactive mode lines use an underline. No fixed light or dark
+background is selected. Syntax highlighting keeps the standard Emacs colors.
+Theme changes while Emacs is running still depend on the terminal's behavior.
+Restart Emacs to apply init changes, or run `M-x my/terminal-appearance` after
+evaluating the updated definition.
+
 | Keys | Action |
 | --- | --- |
 | `C-x C-f` | Open a file |

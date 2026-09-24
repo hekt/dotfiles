@@ -52,4 +52,33 @@
           completion-pcm-leading-wildcard t)
   (display-warning 'init "Install orderless with M-x package-install."))
 
+;; Use terminal defaults instead of a fixed light or dark background.
+(defun my/terminal-appearance (&optional frame)
+  "Use terminal colors and a contrasting mode line on FRAME."
+  (interactive)
+  (with-selected-frame (or frame (selected-frame))
+    (unless (display-graphic-p)
+      (set-face-attribute 'default nil
+                          :foreground "unspecified-fg"
+                          :background "unspecified-bg")
+      (dolist (face '(mode-line mode-line-active))
+        (set-face-attribute face nil
+                            :foreground "unspecified-fg"
+                            :background "unspecified-bg"
+                            :inverse-video t :box nil))
+      (set-face-attribute 'mode-line-inactive nil
+                          :foreground "unspecified-fg"
+                          :background "unspecified-bg"
+                          :inverse-video nil :underline t :box nil)
+      (dolist (face '(region vertico-current))
+        (when (facep face)
+          (set-face-attribute face nil
+                              :foreground "unspecified-fg"
+                              :background "unspecified-bg"
+                              :inverse-video t))))))
+
+;; Terminal initialization can replace default colors after init.el is loaded.
+(add-hook 'window-setup-hook #'my/terminal-appearance)
+(add-hook 'after-make-frame-functions #'my/terminal-appearance 90)
+
 ;;; init.el ends here
