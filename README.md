@@ -51,6 +51,10 @@ The active mode line, selected region, and current completion candidate use
 reverse video. Inactive mode lines use an underline. No fixed light or dark
 background is selected. Syntax highlighting keeps the standard Emacs colors.
 Theme changes while Emacs is running still depend on the terminal's behavior.
+The Zsh config exports `COLORTERM=truecolor` for the 24-bit color terminals
+used with this setup. This lets Emacs draw the detected background accurately
+during startup. Open a new terminal or run `export COLORTERM=truecolor` before
+starting Emacs. Do not use this override on terminals without true color support.
 Restart Emacs to apply init changes, or run `M-x my/terminal-appearance` after
 evaluating the updated definition.
 
