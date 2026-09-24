@@ -39,7 +39,12 @@ The setup provides vertical completion, matching words in any order, saved
 minibuffer history, selection replacement, matching parentheses, and Bash
 editing for `.envrc`. Packages, history, backup files, and auto-save files are
 kept under the same XDG Emacs directory.
-The daemon and Git editor settings are configured separately.
+The Zsh config sets `EDITOR` and `VISUAL` to `emacs -nw`. Git's `core.editor`
+uses the same command. Each invocation starts a terminal Emacs process; no
+daemon is needed. Open a new terminal to apply the shell settings, or run
+`export EDITOR='emacs -nw' VISUAL='emacs -nw'` in an existing shell.
+For Git messages, save with `C-x C-s`, then exit with `C-x C-c` to let Git
+continue. Exiting without saving is not a reliable way to cancel a Git action.
 
 Terminal frames use the terminal's default foreground and background colors.
 The active mode line, selected region, and current completion candidate use
@@ -71,7 +76,7 @@ keys. Emacs translates `C-h` to Backspace; this does not affect the chat input.
 ## .zshrc
 
 ```shell
-if [ -f /path/to/repository/.config/zshrc ]; then
-  source /path/to/repository/.config/zshrc
+if [ -f /path/to/repository/.config/zsh/zshrc ]; then
+  source /path/to/repository/.config/zsh/zshrc
 fi
 ```

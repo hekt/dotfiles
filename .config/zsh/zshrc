@@ -4,6 +4,10 @@
 # can misbehave in some environments such as VSCode.
 FILE_DIR="${${(%):-%N}:A:h}"
 
+# terminal editor
+export EDITOR="emacs -nw"
+export VISUAL="$EDITOR"
+
 alias ls="ls -hlp --color"
 alias lsa="ls -a"
 alias rm="rm -i"

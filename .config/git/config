@@ -41,7 +41,7 @@
 	signingkey = 3A17F1BBAEDB1F15
 [core]
     autocrlf = false
-    editor = vi
+    editor = emacs -nw
     pager = delta
 [interactive]
     diffFilter = delta --color-only
