@@ -8,8 +8,9 @@
 - .github/: CI workflow running `pytest` on PRs and pushes.
 - Submodules: e.g., `.config/zsh/anyframe`. Initialize with `git submodule update --init --recursive`.
 
-Example symlinks (adapt to your path):
-`ln -s /path/to/repo/.config/git ~/.config/git`
+Git setup: keep the local Git directory as a real directory. Include
+`.config/git/config` from a local config and link only `.config/git/ignore`.
+Keep identity and signing settings outside this repository. See README.md.
 
 ## Build, Test, and Development Commands
 - Run tests: `pytest -v` — validates JSON/TOML configs load successfully.

@@ -3,7 +3,6 @@
 ## symlink
 
 ```shell
-ln -s /path/to/repository/.config/git ~/.config/git
 ln -s /path/to/repository/.config/starship.toml ~/.config/starship.toml
 ln -s /path/to/repository/.config/karabiner ~/.config/karabiner
 ln -s /path/to/repository/.config/vim ~/.config/vim
@@ -13,6 +12,38 @@ ln -s /path/to/repository/.config/wezterm ~/.config/wezterm
 ### Notes
 
 - vim requires patch 9.1.0327 to use `.config` (`$XDG_CONFIG_HOME`)
+
+## Git
+
+Keep `${XDG_CONFIG_HOME:-$HOME/.config}/git` as a real directory.
+Store shared settings in this repository. Keep local identity and signing
+settings outside the repository. Back up an existing Git directory or symlink
+before migrating.
+
+Create the local `git/config` file with the following content. Replace the
+repository path and identity values for your setup:
+
+```ini
+[include]
+    path = /path/to/repository/.config/git/config
+[user]
+    name = Your Name
+    email = your-verified-email@example.com
+    signingKey = YOUR_SIGNING_KEY
+[commit]
+    gpgSign = true
+```
+
+Local settings after the include override shared settings. Link only the
+ignore file into the local Git directory:
+
+```shell
+ln -s /path/to/repository/.config/git/ignore "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"
+```
+
+For automation, create a separate local `git/codex.gitconfig` that includes
+the shared config directly and sets its own signing key. Select it with
+`GIT_CONFIG_GLOBAL`. Do not commit local identity or signing files.
 
 ## Emacs
 

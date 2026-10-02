@@ -35,10 +35,6 @@
     rb4 = rebase -i HEAD~4
 [color]
     ui = true
-[user]
-    email = hektorg@gmail.com
-    name = hekt
-	signingkey = 3A17F1BBAEDB1F15
 [core]
     autocrlf = false
     editor = emacs -nw
@@ -53,7 +49,5 @@
     conflictStyle = zdiff3
 [push]
     default = simple
-[commit]
-	gpgsign = true
 [init]
 	defaultBranch = main
