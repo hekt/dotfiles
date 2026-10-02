@@ -8,6 +8,7 @@
       initial-scratch-message nil)
 (menu-bar-mode -1)
 (column-number-mode 1)
+(global-display-line-numbers-mode 1)
 (prefer-coding-system 'utf-8)
 (delete-selection-mode 1)
 (show-paren-mode 1)
